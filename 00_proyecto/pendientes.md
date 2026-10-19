@@ -10,10 +10,11 @@
 - [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
 - [x] Bloque C · Vivienda y distribución (falta: confirmar ubicación de las 5 persianas)
-- [ ] Bloque D · Preferencias de diseño
+- [x] Bloque D · Preferencias de diseño (`04_dashboards/direccion_visual.md`)
 - [x] Bloque E · Uso cotidiano (`00_proyecto/uso_cotidiano.md`)
-- [ ] Bloque F · Seguridad, privacidad y mantenimiento
-- [ ] Resumen de requisitos validado por Aida → cierre de Fase 1
+- [x] Bloque F · Seguridad, privacidad y mantenimiento
+- [ ] SSD en desuso: tipo (SATA 2,5" / M.2 NVMe / M.2 SATA) y si hay caja USB
+- [ ] Resumen de requisitos (`00_proyecto/resumen_requisitos_fase1.md`) validado por Aida → cierre de Fase 1
 
 ## Fechas clave
 

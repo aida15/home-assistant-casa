@@ -38,5 +38,5 @@ Estado: **en definición** (Fase 1). No es todavía el sistema de diseño; eso s
 
 ## Decisiones pendientes
 
-- [ ] Color de acento
-- [ ] Modo claro fijo o automático (oscuro de noche)
+- [x] Color de acento: **terracota** (D-011)
+- [x] Tema: claro de día, **oscuro automático de noche** (D-012)

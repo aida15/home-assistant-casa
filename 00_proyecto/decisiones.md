@@ -14,3 +14,9 @@ Formato: ID · fecha · decisión · motivo · alternativas descartadas. 🎓 = 
 | D-009 | 2026-10-19 | Retirar la integración **Roborock** (aspirador antiguo, ya no existe) | Evitar entidades huérfanas y dependencias de nube inútiles | Mantenerla |
 | D-010 | 2026-10-19 | El área «Zona gaming» pasa a llamarse **«Estudio»** (`estudio`) en todos los dispositivos y zonas | Nombre real de la estancia | — |
 | D-008 | 2026-10-19 | Notificaciones en 3 prioridades (crítica / importante / informativa); resúmenes y mantenimiento como tipos dentro de informativa | Reconcilia puntos 17.4 y 18.4 | 5 niveles planos |
+| D-011 | 2026-10-19 | Paleta: **neutros cálidos + acento terracota** | Preferencia de Aida: neutros con un «punch» de color; terracota asocia «encendido» de forma intuitiva | Salvia, menta |
+| D-012 | 2026-10-19 | **Tema claro de día y oscuro automático de noche** | Evitar deslumbrar en la entrada de noche | Claro fijo, oscuro fijo |
+| D-013 | 2026-10-19 | Acceso remoto **sin Nabu Casa**, con **dominio propio** (mecanismo concreto a definir en Fase 3, sin abrir puertos) | Preferencia de Aida; coste recurrente evitable | Nabu Casa |
+| D-014 | 2026-10-19 | **Una sola cuenta administradora** (Aida); resto de usuarios solo consumen dashboards. Sin invitados ni mantenimiento | Mínimo privilegio | Varios admins |
+| D-015 | 2026-10-19 | Cámaras: **solo directo**, sin grabación; **fuera de la portada**, en vista secundaria | Privacidad; uso puntual (comprobar encuadre) | Cámaras en portada |
+| D-016 | 2026-10-19 | Backups con copia externa en **cuenta de Google Drive dedicada**; migrar la Pi a un **SSD reaprovechado** | Coste cero, separa la copia del almacenamiento que se protege | NAS (no hay) |
