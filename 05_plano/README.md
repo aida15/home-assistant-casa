@@ -26,3 +26,17 @@
 - **Regla única:** conservar los `id` de estancias, luces, puertas y ventanas. El dashboard se engancha a esos `id`, no a la geometría: se pueden mover paredes o puntos sin romper nada.
 - Cada versión queda en Git → cualquier cambio es reversible.
 - Estado: **v0.3 aceptada por Aida como base** (2026-10-19), sabiendo que no es exacta (D-027).
+
+## Evolución prevista: plano 3D con luces realistas (fase posterior)
+
+Objetivo de Aida (2026-10-19): un plano 3D renderizado de la casa en el que las luces se «encienden» de forma realista, como las referencias de HA en tablet.
+
+**Técnica (habitual en HA):**
+1. Modelar la casa en 3D (Sweet Home 3D, gratuito) a partir del plano de obra.
+2. Renderizar desde **la misma cámara fija**: una imagen base de día, una base de noche (todo apagado) y **una imagen por luz** encendida.
+3. En HA, superponer esas imágenes sobre la base y mostrar cada una solo cuando su luz está encendida.
+4. Encima, una capa invisible con las zonas táctiles: reutiliza los `id` de este SVG (estancias, luces, puertas, ventanas).
+
+**Encaje en el plan:** prioridad 7 (efectos visuales) → se hace **después** de tener el dashboard funcional con el SVG (Fase 7) y se valida el rendimiento en la tablet de 2017 (imágenes optimizadas a su resolución, formato WebP).
+
+**Privacidad:** un render 3D revela aún más la casa que el plano → mismo tratamiento que D-003 (versión alterada para redes).

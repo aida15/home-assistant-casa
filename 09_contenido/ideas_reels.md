@@ -27,3 +27,12 @@ Solo ideas respaldadas por algo real del proyecto. Estado: Idea → Pendiente de
 - No grabar: IPs completas, la distribución de la casa, otras personas.
 
 **Edición** — pendiente.
+
+## REEL-02 · De plano de obra a plano 3D que se ilumina
+
+**Estado:** Idea (depende de D-028; fase posterior)
+
+- Gancho propuesto: «Así he convertido el plano de mi casa en un mando a distancia».
+- Secuencia: plano de obra en papel → SVG plano → render 3D → tocar una luz en la tablet y que se encienda en la pantalla y en la casa a la vez.
+- Material a guardar desde ya: el plano de obra (solo versión alterada para publicar) y capturas de cada versión del SVG.
+- Privacidad: usar una versión alterada de la distribución (D-003).
