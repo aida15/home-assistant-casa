@@ -6,7 +6,7 @@ Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunit
 
 | ID | Dispositivo | Marca / modelo | Cant. | Ubicación | Protocolo | Integración candidata | Nube | Estado / falta |
 |---|---|---|---|---|---|---|---|---|
-| DEV-01 | Robot aspirador «atrapacacas» | iRobot Roomba «400» (fw 9.3.7) | 1 | — | Wi-Fi | Oficial «iRobot Roomba and Braava» (local). **Los modelos x05 (105/405/505) no están soportados** | — | ⚠️ Confirmar nombre exacto del modelo en la app |
+| DEV-01 | Robot aspirador «atrapacacas» | iRobot **Roomba Plus 405 Combo** (fw 9.3.7) | 1 | — | Wi-Fi | ❌ **No soportado** por la integración oficial (gama x05 excluida). Alternativas a investigar en la auditoría | Sí (app iRobot) | Se mantiene en la app iRobot / Google Home hasta encontrar vía viable |
 | DEV-02 | Regleta | GHome | 1 | Cocina | Wi-Fi (Tuya, H) | Tuya oficial (nube) · tuya-local (HACS, local) | Según vía | Modelo |
 | DEV-03 | Sensor de agua | Smart Life | 2 | Cocina | Wi-Fi (H, según Aida) | Tuya oficial (nube) | Sí (H) | **No funcionan actualmente**. Modelo |
 | DEV-04 | Fingerbot (acciona calefactor) | MOES | 1 | Cuarto de limpieza | Wi-Fi (H, según Aida) | Por determinar | Por determinar | Modelo. ⚠️ R-04 |
@@ -22,7 +22,7 @@ Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunit
 | DEV-14 | Válvulas termostáticas + termostato | tado **V3** (con suscripción Auto-Assist) | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato salón | Propietario tado vía bridge (H) | Oficial «tado» (nube, API no oficial, **cuota diaria desde 01/2026**, mayor con suscripción) | **Sí** | Confirmar tipo de cada unidad. 🗓️ Renovación finales de marzo 2027 |
 | DEV-15 | Televisor | LG | 1 | Salón | Wi-Fi/Ethernet | Oficial «LG webOS TV» (local) si es smart TV webOS (H) | No | Modelo / ¿webOS? |
 | DEV-16 | Sofá motorizado (en regleta) | — | 1 | Salón | Sin conectividad propia | Solo vía regleta (alimentación) | — | — |
-| DEV-17 | Relés Zigbee | Sonoff **ZBMINI** | Pendiente | Sin instalar | Zigbee | Zigbee (coordinador propio, local) | No | Cantidad, dónde se quieren instalar |
+| DEV-17 | Relés Zigbee | Sonoff **ZBMINI** | 4 | Sin instalar. Destino: luz de techo dorm. Aroa, salón (×2), cocina | Zigbee | Zigbee (coordinador propio, local) | No | Confirmar variante (ZBMINI requiere neutro; ZBMINI-L no) y si hay neutro en las cajas. Mantener interruptor físico (S1/S2) |
 
 ## Planes declarados
 

@@ -4,8 +4,10 @@
 
 - [x] microSD: SanDisk 32 GB clase 10
 - [x] Zigbee: LinknLink ZG-808Z + Sonoff ZBBridge-P
-- [ ] Roomba: nombre exacto del modelo
-- [ ] ZBMINI: cantidad y dónde se quieren instalar
+- [x] Roomba: Roomba Plus 405 Combo (no soportado por la integración oficial)
+- [x] ZBMINI: 4 → luz techo dorm. Aroa, salón ×2, cocina
+- [ ] ZBMINI: variante exacta y presencia de neutro en las cajas
+- [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
 - [ ] Bloque C · Vivienda y distribución
 - [ ] Bloque D · Preferencias de diseño
