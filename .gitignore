@@ -1,0 +1,35 @@
+# --- Secretos y credenciales ---
+secrets.yaml
+**/secrets.yaml
+*.key
+*.pem
+*.crt
+.env
+.env.*
+
+# --- Datos internos de Home Assistant (no versionar) ---
+.storage/
+.cloud/
+.HA_VERSION
+home-assistant_v2.db*
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.log.*
+deps/
+tts/
+__pycache__/
+
+# --- Backups (van por su propia vía, nunca a Git) ---
+backups/
+*.tar
+*.tar.gz
+
+# --- Material privado ---
+privado/
+**/*_privado.*
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
