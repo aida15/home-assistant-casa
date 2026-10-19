@@ -4,4 +4,4 @@ Cambios aplicados a la instalación real (no a la documentación). Formato: fech
 
 | Fecha | Fase | Cambio | Estado | Reversión |
 |---|---|---|---|---|
-| — | — | Sin cambios en la instalación todavía | — | — |
+| 2026-10-19 | 5 | Reserva DHCP de la Pi en el router (misma IP que tenía) · `03_instalacion/F5-02_reserva_dhcp.md` | Probado | Borrar la reserva en el router |

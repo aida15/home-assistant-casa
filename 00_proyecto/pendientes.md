@@ -49,5 +49,5 @@ Hipótesis preliminares, a confirmar:
 
 - [ ] Grabar capturas del «antes» (`09_contenido/capturas_pendientes.md`)
 - [ ] Primer backup completo + copia fuera de la Pi + clave de cifrado custodiada
-- [ ] Reserva DHCP para la Pi en el router
+- [x] Reserva DHCP para la Pi en el router (2026-10-19) · R-02 resuelto
 - [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible)

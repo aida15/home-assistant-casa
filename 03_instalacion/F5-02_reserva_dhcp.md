@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fase | 5 · Preparación |
-| Estado | **Diseñado** → pendiente de ejecutar por Aida |
+| Estado | **Implementado y probado** (2026-10-19) |
 | Objetivo | Que la Pi tenga siempre la misma IP en la red local |
 | Problema que resuelve | R-02: si el router cambia la IP, se rompen la tablet, los accesos guardados y las integraciones que apunten a la Pi |
 | Situación inicial | IP dinámica, sin reserva |
@@ -46,7 +46,8 @@ Borrar la reserva en la misma pantalla del router. La Pi vuelve a IP dinámica s
 
 ## Resultado real
 
-_(pendiente)_
+- 2026-10-19 · Aida crea la reserva en el router con la IP que ya tenía la Pi. Sin incidencias.
+- Comprobación pendiente (no bloquea): confirmar que la IP se mantiene tras el próximo reinicio de la Pi (será en el paso de migración al SSD).
 
 ## Contenido
 
