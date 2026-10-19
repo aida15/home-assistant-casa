@@ -19,10 +19,12 @@ Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunit
 | DEV-11 | Altavoz inteligente | Google Nest Mini | 1 | Salón | Wi-Fi | Oficial «Google Cast» (local) | Voz: sí | Generación no identificada (no es router Thread) |
 | DEV-12 | Enchufe inteligente (lámpara) | Smart Life | 1 en uso | Salón | Wi-Fi (Tuya, H) | Tuya oficial · tuya-local | Según vía | Modelo |
 | DEV-13 | Enchufes inteligentes libres | Pendiente | 3 | — | — | — | — | Marca |
-| DEV-14 | Válvulas termostáticas + termostato | tado **V3** (con suscripción Auto-Assist) | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato salón | Propietario tado vía bridge (H) | Oficial «tado» (nube, API no oficial, **cuota diaria desde 01/2026**, mayor con suscripción) | **Sí** | Confirmar tipo de cada unidad. 🗓️ Renovación finales de marzo 2027 |
-| DEV-15 | Televisor | LG | 1 | Salón | Wi-Fi/Ethernet | Oficial «LG webOS TV» (local) si es smart TV webOS (H) | No | Modelo / ¿webOS? |
+| DEV-14 | Válvulas termostáticas + termostato | tado **V3** (con suscripción Auto-Assist) | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato salón | Propietario tado vía Internet Bridge | ✅ **Ya integrado en local vía HomeKit** (bridge IB01 + 4 SRT01 + 1 ST01). También integrado por la nube (duplicado) | HomeKit: No · Integración tado: Sí | 🗓️ Renovación finales de marzo 2027 |
+| DEV-15 | Televisor | LG **UK6470PLC** (webOS) | 1 | Salón | Wi-Fi/Ethernet | Oficial «LG webOS TV» (local) — **descubierta por HA, sin añadir** | No | — |
 | DEV-16 | Sofá motorizado (en regleta) | — | 1 | Salón | Sin conectividad propia | Solo vía regleta (alimentación) | — | — |
 | DEV-17 | Relés Zigbee | Sonoff **ZBMINI** | 4 | Sin instalar. Destino: luz de techo dorm. Aroa, salón (×2), cocina | Zigbee | Zigbee (coordinador propio, local) | No | Confirmar variante (ZBMINI requiere neutro; ZBMINI-L no) y si hay neutro en las cajas. Mantener interruptor físico (S1/S2) |
+
+| DEV-18 | ¿? | Roborock | 1 | — | Wi-Fi | Oficial «Roborock» — **ya configurada en HA** | Sí (H) | ⚠️ No mencionado por Aida: identificar |
 
 ## Planes declarados
 
