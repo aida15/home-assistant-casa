@@ -40,3 +40,7 @@ Estado: **en definición** (Fase 1). No es todavía el sistema de diseño; eso s
 
 - [x] Color de acento: **terracota** (D-011)
 - [x] Tema: claro de día, **oscuro automático de noche** (D-012)
+
+## Entregas de la Fase 4
+
+- Entrega 1: `fase4_entrega1.md`
