@@ -19,3 +19,10 @@
 
 - Confirmar: las marcas moradas del plano de obra se han interpretado como **armarios** (estudio, hab. Aroa, hab. principal).
 - Elegir la técnica de implementación en HA (tarjeta de imagen con elementos superpuestos vs. tarjeta de plano comunitaria) → comparativa antes de la Fase 7.
+
+## Cómo cambiar el plano en el futuro
+
+- Es un archivo de texto (SVG): se puede editar pidiéndoselo a Claude, o a mano con **Inkscape** (gratis) o Figma.
+- **Regla única:** conservar los `id` de estancias, luces, puertas y ventanas. El dashboard se engancha a esos `id`, no a la geometría: se pueden mover paredes o puntos sin romper nada.
+- Cada versión queda en Git → cualquier cambio es reversible.
+- Estado: **v0.3 aceptada por Aida como base** (2026-10-19), sabiendo que no es exacta (D-027).
