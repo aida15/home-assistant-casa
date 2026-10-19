@@ -1,29 +1,36 @@
 # Inventario · Dispositivos
 
-Versión 0.1 (2026-10-19) — lista aportada por Aida. **Protocolos e integraciones son hipótesis (H)** hasta conocer el modelo exacto; nada se da por compatible por funcionar con Google Home.
+Versión 0.2 (2026-10-19). **Protocolos e integraciones marcados (H) son hipótesis** hasta verificarlos en la auditoría; nada se da por compatible por funcionar con Google Home.
 
-Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunitaria) · **Matter** · **Zigbee** (vía coordinador propio, local).
+Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunitaria) · **Matter** · **Zigbee** (coordinador propio, local).
 
-| ID | Dispositivo | Marca | Cant. | Ubicación | Protocolo (H) | Integración candidata (H) | Nube | Falta |
+| ID | Dispositivo | Marca / modelo | Cant. | Ubicación | Protocolo | Integración candidata | Nube | Estado / falta |
 |---|---|---|---|---|---|---|---|---|
-| DEV-01 | Robot aspirador | iRobot Roomba | 1 | — | Wi-Fi | Oficial «iRobot Roomba and Braava» (local push). Modelos x05 no soportados; j7 no entrega contraseña local | No para HA (la app sí) | Modelo |
-| DEV-02 | Regleta | GHome | 1 | Cocina | Wi-Fi (ecosistema Tuya, H) | Tuya oficial (nube) · tuya-local (HACS, local) · Matter si el modelo lo soporta | Según vía | Modelo, app que usas |
-| DEV-03 | Sensor de agua | Smart Life | 2 | Cocina | Wi-Fi o Zigbee (H) | Si Zigbee → coordinador propio (local). Si Wi-Fi → Tuya (nube) | Según protocolo | Modelo, ¿lleva hub? |
-| DEV-04 | Pulsador Fingerbot (acciona calefactor) | MOES | 1 | Cuarto de limpieza | Bluetooth o Zigbee (H) | Si Zigbee → coordinador propio. Si BLE → Tuya vía gateway o HACS | Según protocolo | Modelo/versión |
-| DEV-05 | Sensor de lluvia | eWeLink | 1 | Jardín | Wi-Fi o Zigbee (H) | Si Zigbee → coordinador propio. Si Wi-Fi → eWeLink/SONOFF (nube o LAN) | Según protocolo | Modelo, ¿va por el bridge Sonoff? |
-| DEV-06 | Regletas (TV, cámara, sofá, asistente) | GHome | 2 | Salón | Wi-Fi (H) | Igual que DEV-02 | Según vía | Modelo, qué toma alimenta qué |
-| DEV-07 | Deshumidificador | Midea | 1 | — | Wi-Fi | Sin integración oficial. HACS «midea LAN» (local) — a evaluar | No (LAN) | Modelo, ubicación |
+| DEV-01 | Robot aspirador «atrapacacas» | iRobot Roomba «400» (fw 9.3.7) | 1 | — | Wi-Fi | Oficial «iRobot Roomba and Braava» (local). **Los modelos x05 (105/405/505) no están soportados** | — | ⚠️ Confirmar nombre exacto del modelo en la app |
+| DEV-02 | Regleta | GHome | 1 | Cocina | Wi-Fi (Tuya, H) | Tuya oficial (nube) · tuya-local (HACS, local) | Según vía | Modelo |
+| DEV-03 | Sensor de agua | Smart Life | 2 | Cocina | Wi-Fi (H, según Aida) | Tuya oficial (nube) | Sí (H) | **No funcionan actualmente**. Modelo |
+| DEV-04 | Fingerbot (acciona calefactor) | MOES | 1 | Cuarto de limpieza | Wi-Fi (H, según Aida) | Por determinar | Por determinar | Modelo. ⚠️ R-04 |
+| DEV-05 | Sensor de lluvia | eWeLink | 1 | Jardín | Wi-Fi (H, según Aida) | Por determinar | Por determinar | **No funciona actualmente** (H). Modelo |
+| DEV-06 | Regletas (TV, cámara, sofá, asistente) | GHome | 2 | Salón | Wi-Fi (Tuya, H) | Igual que DEV-02 | Según vía | Modelo, qué toma alimenta qué. ⚠️ R-03 |
+| DEV-07 | Deshumidificador | Midea | 1 | **Móvil** (se mueve según humedad medida por tado) | Wi-Fi | Sin integración oficial. HACS «midea LAN» (local) — a evaluar | No (LAN) | Modelo |
 | DEV-08 | Ventilador | Create | 1 | Estudio | Wi-Fi (Tuya, H) | Tuya oficial (nube) · tuya-local (HACS) | Según vía | Modelo |
-| DEV-09 | Cámara Nest Cam (wired) | Google | 2 | Entrada, salón | Wi-Fi | Oficial «Google Nest» (SDM API, nube, requiere proyecto en Device Access) | **Sí** | Generación exacta |
-| DEV-10 | Asistente de voz | Google | 2 | Entrada, salón | Wi-Fi | Oficial «Google Cast» (local: TTS, multimedia) | Voz: sí | Modelo (Nest Mini / Nest Hub…) |
-| DEV-11 | Enchufes inteligentes | — | 4 (1 en uso, 3 libres) | — | — | — | — | Marca, modelo, dónde está el que se usa |
-| DEV-12 | Termostatos/válvulas | tado | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato en salón | Propietario tado / Thread (si tado X) | V3+: oficial «tado» (nube, API no oficial, **cuota diaria desde 01/2026**). tado X: **Matter** (local) | Sí (V3+) | Generación (V3+ o X), tipo de cada unidad, ¿suscripción Auto-Assist? |
-| DEV-13 | Televisor | — | 1 | Salón | — | — | — | Marca, modelo, ¿smart TV? |
-| DEV-14 | Sofá (en regleta) | — | 1 | Salón | — | — | — | ¿Motorizado? |
+| DEV-09 | Cámara Nest Cam (wired) | Google | 2 | Entrada, salón | Wi-Fi | Oficial «Google Nest» (SDM API, nube, proyecto en Device Access) | **Sí** | Generación exacta |
+| DEV-10 | Altavoz inteligente | Google Home (original) | 1 | Entrada | Wi-Fi | Oficial «Google Cast» (local: TTS, multimedia) | Voz: sí | Varios años de antigüedad |
+| DEV-11 | Altavoz inteligente | Google Nest Mini | 1 | Salón | Wi-Fi | Oficial «Google Cast» (local) | Voz: sí | Generación no identificada (no es router Thread) |
+| DEV-12 | Enchufe inteligente (lámpara) | Smart Life | 1 en uso | Salón | Wi-Fi (Tuya, H) | Tuya oficial · tuya-local | Según vía | Modelo |
+| DEV-13 | Enchufes inteligentes libres | Pendiente | 3 | — | — | — | — | Marca |
+| DEV-14 | Válvulas termostáticas + termostato | tado **V3** (con suscripción Auto-Assist) | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato salón | Propietario tado vía bridge (H) | Oficial «tado» (nube, API no oficial, **cuota diaria desde 01/2026**, mayor con suscripción) | **Sí** | Confirmar tipo de cada unidad. 🗓️ Renovación finales de marzo 2027 |
+| DEV-15 | Televisor | LG | 1 | Salón | Wi-Fi/Ethernet | Oficial «LG webOS TV» (local) si es smart TV webOS (H) | No | Modelo / ¿webOS? |
+| DEV-16 | Sofá motorizado (en regleta) | — | 1 | Salón | Sin conectividad propia | Solo vía regleta (alimentación) | — | — |
+| DEV-17 | Relés Zigbee | Sonoff **ZBMINI** | Pendiente | Sin instalar | Zigbee | Zigbee (coordinador propio, local) | No | Cantidad, dónde se quieren instalar |
+
+## Planes declarados
+
+- **Calefacción:** cabezal en todas las estancias (faltan los 2 baños, entrada y cocina). No tiene por qué ser tado. Si HA cubre lo que hace Auto-Assist, se puede dejar de pagar la suscripción (renueva a finales de marzo 2027).
 
 ## Notas para la auditoría
 
-- La cuota diaria de tado afecta a la frecuencia de sondeo y a la detección de presencia vía tado.
-- Si algún asistente es un **Nest Hub (2.ª gen) o Nest Hub Max**, actúa como border router Thread: relevante si los tado son tado X.
-- Las regletas del salón alimentan la cámara y el asistente → ver riesgo R-03.
-- El Fingerbot acciona un calefactor → ver riesgo R-04.
+- Varios dispositivos Wi-Fi no funcionan hoy: revisar uno a uno antes de integrarlos (¿batería?, ¿fuera de cobertura?, ¿desvinculados?).
+- La cuota diaria de tado afecta a la frecuencia de sondeo y a la presencia vía tado.
+- Ningún asistente actual actúa como router Thread.
+- Regletas del salón → R-03. Fingerbot y calefactor → R-04. Roomba posible x05 → R-08.
