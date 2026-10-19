@@ -4,7 +4,7 @@
 
 | Archivo | Qué es |
 |---|---|
-| `plano_casa.svg` | Plano vectorial **v0.2**, trazado sobre el **plano de obra** (≈ 59 px/m, medidas aproximadas). Incluye todas las puertas y ventanas como elementos individuales y los 11 puntos de luz de techo. Destino final: `www/plano/` en `home-assistant-config` |
+| `plano_casa.svg` | Plano vectorial **v0.3**, trazado sobre el **plano de obra** (≈ 59 px/m, medidas aproximadas). Incluye todas las puertas y ventanas como elementos individuales y los 11 puntos de luz de techo. Destino final: `www/plano/` en `home-assistant-config` |
 
 ## Convenciones del SVG
 
@@ -17,5 +17,5 @@
 
 ## Pendiente
 
-- Confirmar (H): posición de la puerta de la calle, acceso a la habitación principal, puerta salón ↔ pasillo, ventanas de cocina y cuarto de limpieza, puertas del salón al jardín/terraza 1.
+- Confirmar: las marcas moradas del plano de obra se han interpretado como **armarios** (estudio, hab. Aroa, hab. principal).
 - Elegir la técnica de implementación en HA (tarjeta de imagen con elementos superpuestos vs. tarjeta de plano comunitaria) → comparativa antes de la Fase 7.

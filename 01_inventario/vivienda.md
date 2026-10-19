@@ -13,11 +13,11 @@ Superficies del **plano de obra** (aportado por Aida el 2026-10-19), que sustitu
 
 | Estancia | ID de área | m² (obra) | Nombre en el plano de obra | Puntos de luz de techo | Dispositivos conocidos | Notas |
 |---|---|---|---|---|---|---|
-| Entrada | `entrada` | 5,13 | Vestíbulo | 1 | Nest Cam, Google Home | Conecta con cocina, salón y la calle. **No** conecta con pasillo ni con la habitación principal |
-| Pasillo | `pasillo` | 3,51 | Pasillo | 1 | — | Da a estudio, hab. Aroa y baño Aroa |
-| Cocina | `cocina` | ≈ 8,7 | Cocina | 1 (ZBMINIL2 previsto) | Regleta GHome, 2 sensores de agua | Cabezal previsto |
-| Cuarto de limpieza | `cuarto_limpieza` | 3,57 | Tendedero | 1 | Fingerbot MOES (calefactor) | Puerta a la cocina |
-| Salón | `salon` | 19,88 | Salón | 2 (ZBMINIL2 previstos) | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado | Ventanales norte y este. **Primeras persianas a motorizar** |
+| Entrada | `entrada` | 5,13 | Vestíbulo | 1 | Nest Cam, Google Home | Distribuidor: puerta de la calle + acceso a cocina, salón, pasillo y habitación principal |
+| Pasillo | `pasillo` | 3,51 | Pasillo | 1 | — | Desde la entrada; da a estudio, hab. Aroa y baño Aroa |
+| Cocina | `cocina` | ≈ 8,7 | Cocina | 1 (ZBMINIL2 previsto) | Regleta GHome, 2 sensores de agua | Sin ventanas; separación con el cuarto de limpieza totalmente acristalada. Cabezal previsto |
+| Cuarto de limpieza | `cuarto_limpieza` | 3,57 | Tendedero | 1 | Fingerbot MOES (calefactor) | Ventana en toda la pared que da al jardín; puerta a la cocina |
+| Salón | `salon` | 19,88 | Salón | 2 (ZBMINIL2 previstos) | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado | Ventanales norte y este; **puerta a la Terraza 1** en el lado este. **Primeras persianas a motorizar** |
 | Estudio | `estudio` | 11,34 | Dormitorio 2 | 1 | Válvula tado, ventilador Create, tado Internet Bridge | Antes «Zona gaming» (D-010) |
 | Habitación Aroa | `habitacion_aroa` | 12,45 | Dormitorio 3 | 1 (ZBMINIL2 previsto) | Válvula tado | |
 | Baño Aroa | `bano_aroa` | 4,36 | Baño | 1 | — | Ducha de pared a pared, sin bidé. Cabezal previsto |
