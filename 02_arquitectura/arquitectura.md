@@ -7,8 +7,8 @@ Se entrega por bloques; cada bloque queda **propuesto** hasta que Aida lo aprueb
 | 1 | Backups y migración a SSD | ✅ **Aprobado** (2026-10-19, con cambio de frecuencia) |
 | 2 | Zigbee: ZHA vs Zigbee2MQTT | ✅ **Aprobado** (2026-10-19): ZHA |
 | 3 | Acceso remoto con dominio propio | ✅ **Aprobado** (2026-10-19): Cloudflare Tunnel |
-| 4 | Estructura de configuración (YAML + Git) y acceso de Claude | **Propuesto** |
-| 5 | Usuarios y permisos | Pendiente |
+| 4 | Estructura de configuración (YAML + Git) y acceso de Claude | ✅ **Aprobado** (2026-10-19) |
+| 5 | Usuarios y permisos | **Propuesto** |
 | 6 | Decisiones de integración (Tuya, tado nube) | Pendiente |
 | 7 | Análisis de fallos | Pendiente |
 
@@ -285,11 +285,64 @@ La clave de despliegue del repo (deploy key) la genera Aida en HA y la pega en G
 
 ### Decisiones que pide este bloque
 
-- [ ] Dos repos (crear `home-assistant-config` privado, vacío)
-- [ ] Estructura por función y reglas YAML ↔ UI
-- [ ] Flujo de cambio con Git pull manual
+- [x] Dos repos: `home-assistant-config` creado (privado, vacío) y conectado a la sesión de Claude
+- [x] Estructura por función y reglas YAML ↔ UI
+- [x] Flujo de cambio con Git pull manual
+- Nota: el repo de configuración **se rellena por primera vez desde HA** en la Fase 5 (se sube la configuración real), no desde aquí, para no pisar `/config`.
 
 ### Fuentes (consultadas 2026-10-19)
 
 - Git pull: https://github.com/home-assistant/addons/blob/master/git_pull/DOCS.md
 - Packages: https://www.home-assistant.io/docs/configuration/packages/
+
+---
+
+## Bloque 5 · Usuarios y permisos
+
+### 5.1 Cuentas
+
+| Cuenta | Tipo | Acceso desde fuera | MFA | Persona en HA (presencia) | Uso |
+|---|---|---|---|---|---|
+| `aida` | Propietaria / **única administradora** (D-014) | Sí | **TOTP obligatorio** | Sí (móvil Android) | Administración y uso diario |
+| `mikel` | Usuario normal | Sí | **TOTP obligatorio** | Sí (iPhone) | Uso diario |
+| `tablet` | Usuario normal | **No: «solo red local»** ✅ | No (es un panel fijo; el bloqueo de red local hace de barrera) | **No** (no representa a nadie) | Panel de la entrada |
+| `claude` (futuro) | Usuario normal, **no admin** | Solo vía MCP por el túnel | — (OAuth) | No | MCP con entidades expuestas; se puede revocar en cualquier momento |
+
+Las cuentas de usuario normal no ven Ajustes ni pueden cambiar la configuración.
+
+### 5.2 Lo que conviene saber (autenticación ≠ permisos ≠ visibilidad)
+
+| Capa | Qué hace | Qué NO hace |
+|---|---|---|
+| **Autenticación** (contraseña + MFA, «solo red local») | Decide **quién entra y desde dónde** | — |
+| **Administrador vs usuario** | Un usuario normal no puede tocar la configuración | **No limita qué dispositivos puede encender o apagar**: HA no tiene permisos por entidad 🔍 |
+| **Visibilidad del dashboard** | Ocultar tarjetas o vistas a ciertos usuarios | **No es seguridad**: ocultar una tarjeta no impide la acción por otras vías |
+
+**Consecuencia de diseño:** la protección de lo sensible (calefactor del Fingerbot, cámaras) se pone en la **lógica** (límites de tiempo, condiciones, confirmaciones) y en la **red** (túnel, MFA, solo red local), no en esconder botones.
+
+**Lección relacionada 🎓:** en 2026 se publicó una vulnerabilidad en un editor de archivos comunitario para HA que permitía a cualquier usuario no administrador ejecutar acciones de administrador ✅. Por eso este proyecto evita apps y extensiones que no sean necesarias.
+
+### 5.3 Recuperación de acceso
+
+| Riesgo | Medida |
+|---|---|
+| Aida pierde el móvil con el TOTP | Guardar el **secreto TOTP en KeePass** (admite TOTP) al activarlo → se puede regenerar el código en otro dispositivo |
+| Aida olvida la contraseña | Contraseña en KeePass. Último recurso: restablecerla desde la consola de la Pi (hay teclado y pantalla) 🔍 |
+| La tablet queda desatendida | Usuario sin admin, sin cámaras en portada, sin acceso desde fuera |
+
+### 5.4 Revisión de lo que ya existe (Fase 5)
+
+- Comprobar qué cuentas hay hoy y si la app móvil ya vinculada es la de Aida.
+- Activar MFA en la cuenta de Aida **antes** de abrir el túnel.
+
+### Decisiones que pide este bloque
+
+- [ ] Aprobar las 3 cuentas (+ `claude` futura) y sus restricciones
+- [ ] MFA obligatorio para Aida y Mikel (¿Mikel conforme con usar una app de autenticación?)
+
+### Fuentes (consultadas 2026-10-19)
+
+- MFA (TOTP): https://www.home-assistant.io/docs/authentication/multi-factor-auth/
+- «Solo red local»: https://www.nabucasa.com/config/troubleshooting/user_restricted_to_local_access
+- Vulnerabilidad de un editor comunitario (CVE-2026-53453): https://app.opencve.io/cve/CVE-2026-53453
+- Sistema de permisos (blog de desarrolladores, 2019; a confirmar vigencia): https://developers.home-assistant.io/blog/2019/03/11/user-permissions.html
