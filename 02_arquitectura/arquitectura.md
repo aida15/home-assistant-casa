@@ -8,8 +8,8 @@ Se entrega por bloques; cada bloque queda **propuesto** hasta que Aida lo aprueb
 | 2 | Zigbee: ZHA vs Zigbee2MQTT | ✅ **Aprobado** (2026-10-19): ZHA |
 | 3 | Acceso remoto con dominio propio | ✅ **Aprobado** (2026-10-19): Cloudflare Tunnel |
 | 4 | Estructura de configuración (YAML + Git) y acceso de Claude | ✅ **Aprobado** (2026-10-19) |
-| 5 | Usuarios y permisos | **Propuesto** |
-| 6 | Decisiones de integración (Tuya, tado nube) | Pendiente |
+| 5 | Usuarios y permisos | ✅ **Aprobado** (2026-10-19) |
+| 6 | Decisiones de integración (Tuya, tado nube) | **Propuesto** |
 | 7 | Análisis de fallos | Pendiente |
 
 ---
@@ -337,8 +337,8 @@ Las cuentas de usuario normal no ven Ajustes ni pueden cambiar la configuración
 
 ### Decisiones que pide este bloque
 
-- [ ] Aprobar las 3 cuentas (+ `claude` futura) y sus restricciones
-- [ ] MFA obligatorio para Aida y Mikel (¿Mikel conforme con usar una app de autenticación?)
+- [x] Cuentas aprobadas (D-022)
+- [x] MFA obligatorio para Aida y Mikel. Deseo de Aida: no tener que meter MFA en casa con los móviles habituales → se cumple sin excepciones de red, porque **el MFA solo se pide al iniciar sesión** y la app mantiene la sesión abierta. Se descarta eximir la red local (`trusted_networks`): detrás del túnel, el tráfico de Internet entra por un proceso local y un error de configuración daría acceso sin contraseña desde fuera 🔍 🎓
 
 ### Fuentes (consultadas 2026-10-19)
 
@@ -346,3 +346,27 @@ Las cuentas de usuario normal no ven Ajustes ni pueden cambiar la configuración
 - «Solo red local»: https://www.nabucasa.com/config/troubleshooting/user_restricted_to_local_access
 - Vulnerabilidad de un editor comunitario (CVE-2026-53453): https://app.opencve.io/cve/CVE-2026-53453
 - Sistema de permisos (blog de desarrolladores, 2019; a confirmar vigencia): https://developers.home-assistant.io/blog/2019/03/11/user-permissions.html
+
+---
+
+## Bloque 6 · Decisiones de integración
+
+| Grupo | Decisión propuesta | Motivo | Revisión |
+|---|---|---|---|
+| Tuya (3 regletas, enchufe, ventilador) | **Integración oficial (nube)** para todo al principio | Alta en 1 minuto con la app Smart Life; sin claves locales que se rompen al re-emparejar | Si las regletas del salón (TV/sofá, uso diario) fallan o van lentas → pasarlas a **tuya-local** (HACS), una a una |
+| tado V3 | **HomeKit = vía principal** (control y lecturas, local). **Nube = temporal** | La nube aporta hoy la presencia de la app de tado y el modo ausencia | Antes de finales de marzo 2027: con la presencia de HA funcionando, decidir no renovar Auto-Assist y **retirar la integración de nube** (sin suscripción, el sondeo cada 5 min supera las 100 peticiones/día ✅) |
+| Nest Cam ×2 | **Integración oficial** (pago único 5 USD) | Única vía; solo directo | Si Google cambia la API |
+| LG webOS | **Añadir** (descubierta) | Local | — |
+| Google Cast | **Mantener** | Local; avisos de voz | — |
+| Midea | **HACS, prioridad baja** | Uso ocasional; integración comunitaria | Fase 6, al final |
+| Roomba 405 | **Sin integración** | No hay vía viable | Revisar el desarrollo comunitario cada pocos meses |
+| Roborock, UPnP/IGD | **Retirar** | Sin uso | Fase 5, tras el backup |
+| Sensores Wi-Fi, Fingerbot | Despriorizados | Decisión de Aida | Fase 6 |
+
+### Sobre HACS (tienda comunitaria)
+
+Hará falta para tuya-local, Midea y probablemente para tarjetas visuales del dashboard. **No se instala hasta que haya un primer uso justificado** (Fase 4 o 6). Cada extensión de HACS pasará la ficha del punto 5 de los requisitos (problema, ventajas, dependencias, riesgos, mantenimiento, plan B).
+
+### Decisión que pide este bloque
+
+- [ ] Aprobar las decisiones de integración
