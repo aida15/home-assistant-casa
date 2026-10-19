@@ -1,6 +1,6 @@
 # Fase 4 · Entrega 1 — Navegación, sistema visual e Inicio
 
-Fecha: 2026-10-19 · Estado: **pendiente de revisión por Aida**
+Fecha: 2026-10-19 · Estado: ✅ **Aprobada** (2026-10-19, D-025). Tablet en horizontal.
 Lienzo de diseño (privado): «HA Casa · Diseño» en Claude (artifact `Wmd8wLbLmdsYco2qYBZ5bt`).
 
 ## Contenido
