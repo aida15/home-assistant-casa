@@ -10,7 +10,7 @@ Se entrega por bloques; cada bloque queda **propuesto** hasta que Aida lo aprueb
 | 4 | Estructura de configuración (YAML + Git) y acceso de Claude | ✅ **Aprobado** (2026-10-19) |
 | 5 | Usuarios y permisos | ✅ **Aprobado** (2026-10-19) |
 | 6 | Decisiones de integración (Tuya, tado nube) | ✅ **Aprobado** (2026-10-19) |
-| 7 | Análisis de fallos | **Propuesto** |
+| 7 | Análisis de fallos | ✅ **Aprobado** (2026-10-19) |
 
 ---
 
@@ -407,7 +407,7 @@ Principio rector: **si HA se cae, la casa sigue funcionando como una casa normal
 
 ### Decisión que pide este bloque
 
-- [ ] Aprobar el análisis y sus consecuencias de diseño → **cierre de la Fase 3**
+- [x] Análisis aprobado (D-024) → **Fase 3 cerrada (2026-10-19)**
 
 ---
 
