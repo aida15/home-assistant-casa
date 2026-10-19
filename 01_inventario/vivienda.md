@@ -34,7 +34,7 @@ Elementos del plano **sin uso en HA**: «habitación 10/12/14» (tabiques interi
 ## Persianas
 
 - Ninguna motorizada todavía. **Se empieza por el salón.**
-- **5 persianas de cinta** (confirmar si las 5 son del salón).
+- **Persianas de cinta**: las primeras en motorizar serán las del salón; a futuro, todas las de la casa.
 - Sin toma de corriente junto a las cajas: por eso no están motorizadas. **Presupuestos de instalación eléctrica pendientes.**
 
 ## Tablet de control

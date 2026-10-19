@@ -1,6 +1,6 @@
 # Fase 4 · Entrega 2 — Estancia, clima, ficha y fallos
 
-Fecha: 2026-10-19 · Estado: **pendiente de revisión por Aida**
+Fecha: 2026-10-19 · Estado: ✅ **Aprobada** (2026-10-19)
 Mismo lienzo «HA Casa · Diseño».
 
 | Artboard | Qué muestra |
