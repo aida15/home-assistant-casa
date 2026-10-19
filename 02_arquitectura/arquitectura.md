@@ -6,8 +6,8 @@ Se entrega por bloques; cada bloque queda **propuesto** hasta que Aida lo aprueb
 |---|---|---|
 | 1 | Backups y migración a SSD | ✅ **Aprobado** (2026-10-19, con cambio de frecuencia) |
 | 2 | Zigbee: ZHA vs Zigbee2MQTT | ✅ **Aprobado** (2026-10-19): ZHA |
-| 3 | Acceso remoto con dominio propio | **Propuesto** |
-| 4 | Estructura de configuración (YAML + Git) y acceso de Claude | Pendiente |
+| 3 | Acceso remoto con dominio propio | ✅ **Aprobado** (2026-10-19): Cloudflare Tunnel |
+| 4 | Estructura de configuración (YAML + Git) y acceso de Claude | **Propuesto** |
 | 5 | Usuarios y permisos | Pendiente |
 | 6 | Decisiones de integración (Tuya, tado nube) | Pendiente |
 | 7 | Análisis de fallos | Pendiente |
@@ -181,8 +181,8 @@ Orden propuesto (se detallará paso a paso en la Fase 5):
 
 ### Decisiones que pide este bloque
 
-- [ ] Opción A (Cloudflare Tunnel) o B (Tailscale)
-- [ ] Si A: ¿dominio ya pensado? (sin relación con la casa ni la familia)
+- [x] Opción A: Cloudflare Tunnel (D-020)
+- [x] Dominio elegido por Aida. **No se escribe en el repo**: en la configuración irá en `secrets.yaml` y en la documentación como `<dominio>`
 
 ### Fuentes (consultadas 2026-10-19)
 
@@ -192,3 +192,104 @@ Orden propuesto (se detallará paso a paso en la Fase 5):
 - Local Push: https://companion.home-assistant.io/docs/notifications/notification-local/
 - MCP Server (requiere acceso público para clientes en la nube): https://home-assistant.io/integrations/mcp_server/
 - Google Assistant manual (requiere HTTPS externo): https://www.home-assistant.io/integrations/google_assistant/
+
+---
+
+## Bloque 4 · Estructura de configuración, Git y forma de trabajar
+
+### 4.1 Dos repositorios privados
+
+| Repo | Contenido | Quién escribe |
+|---|---|---|
+| `home-assistant-casa` (ya existe) | Documentación, decisiones, inventario, diseño, contenido, curso | Claude (y Aida) |
+| `home-assistant-config` (**nuevo**) | La configuración YAML de HA: su raíz es la carpeta `/config` | Claude propone, HA la descarga |
+
+**Por qué separados:** la herramienta de sincronización (app oficial «Git pull») espera que el repo **sea** la carpeta de configuración ✅. Mezclar documentación, imágenes del curso y YAML en `/config` ensucia la instalación.
+
+### 4.2 Qué se versiona y qué no
+
+| Se versiona | NO se versiona |
+|---|---|
+| `configuration.yaml` | `secrets.yaml` (contraseñas, dominio, claves) |
+| `packages/` (lógica por función) | `.storage/` (integraciones, dispositivos, usuarios, registro de entidades): lo cubren los backups |
+| `dashboards/` (YAML) | Base de datos del historial y logs |
+| `themes/` | Backups |
+| `www/plano/` (SVG del plano real; repo privado) | `automations.yaml` / `scripts.yaml` de la UI (borradores, ver 4.4) |
+| `blueprints/` | |
+
+Se usará un `.gitignore` en modo **lista blanca** (se ignora todo salvo lo que se nombra) para que nunca se cuele un secreto por accidente.
+
+**Git ≠ backup:** Git guarda la historia del YAML; el backup guarda el sistema entero (incluido `.storage`). Se necesitan los dos.
+
+### 4.3 Estructura de carpetas propuesta
+
+```
+/config
+├── configuration.yaml        # mínimo: carga packages, dashboards, temas, http/proxy
+├── secrets.yaml              # NO versionado
+├── packages/                 # cada archivo = un tema funcional
+│   ├── sistema/              # backups, notificaciones, salud del sistema
+│   ├── presencia/            # quién está en casa, modo casa
+│   ├── calefaccion/          # tado
+│   ├── iluminacion/          # luces y escenas
+│   └── ...                   # se crean solo cuando haya contenido
+├── dashboards/
+│   ├── principal.yaml        # tablet / general
+│   ├── movil.yaml
+│   └── componentes/          # plantillas de tarjetas reutilizables
+├── themes/
+│   └── casa.yaml             # neutros + terracota, claro/oscuro
+└── www/plano/                # SVG del plano
+```
+
+- **Por función, no por habitación:** una automatización como «salir de casa» toca todas las estancias; las áreas ya viven en el registro de HA.
+- Los nombres de archivo deben ser únicos aunque estén en subcarpetas ✅.
+- Separar en `packages/` lo **genérico** (reutilizable para el producto) de lo **específico de esta casa** se hará con convenciones de nombres, sin abstracciones complejas (punto 17.7).
+
+### 4.4 Reglas de convivencia YAML ↔ UI (desarrolla D-001)
+
+- Lo que vive en YAML **solo se cambia vía Git**. Si se edita en la propia HA, el siguiente `pull` puede chocar.
+- Las automatizaciones creadas en la UI se consideran **borradores de prueba**. Si se quedan, se pasan a un package.
+- Integraciones, dispositivos, áreas y usuarios: **siempre en la UI** (no admiten YAML o no conviene).
+
+### 4.5 Flujo de un cambio
+
+1. Claude escribe el cambio en `home-assistant-config` con un commit descriptivo (y la ficha en `home-assistant-casa`).
+2. Aida pulsa **Git pull** en HA (más adelante, automatizable o vía MCP).
+3. HA: *Herramientas para desarrolladores → Comprobar configuración*.
+4. Recargar lo afectado (o reiniciar si hace falta).
+5. Probar según la ficha → resultado al registro de cambios.
+6. **Si falla:** `git revert` del commit + Git pull → vuelve el estado anterior. Si algo peor falla: backup.
+
+App Git pull configurada en modo **`pull`** (no `reset`, que machaca cambios locales ✅) y **sin reinicio automático** al principio, para controlar cada cambio.
+
+### 4.6 Apps (complementos) necesarias en HA
+
+| App | Para qué | Tipo |
+|---|---|---|
+| **Terminal & SSH** | Crear el repo inicial desde `/config`, diagnóstico (resuelve R-07) | Oficial |
+| **Git pull** | Bajar los cambios del repo | Oficial ✅ |
+| **cloudflared** | Túnel del Bloque 3 | Comunitaria |
+
+Nada más por ahora: el editor de archivos no hace falta si los cambios entran por Git.
+
+### 4.7 Acceso de Claude, por etapas (desarrolla D-007)
+
+| Etapa | Acceso | Cuándo |
+|---|---|---|
+| 1 | Escritura en los dos repos (sin tocar HA directamente) | Fase 5 |
+| 2 | Lectura de HA desde el navegador del PC vinculado (con tu aprobación por acción) | Ya disponible |
+| 3 | MCP Server de HA con **usuario dedicado no administrador** y solo entidades expuestas | Tras el túnel (Fase 5-6) |
+
+La clave de despliegue del repo (deploy key) la genera Aida en HA y la pega en GitHub: **Claude no ve ni maneja claves**.
+
+### Decisiones que pide este bloque
+
+- [ ] Dos repos (crear `home-assistant-config` privado, vacío)
+- [ ] Estructura por función y reglas YAML ↔ UI
+- [ ] Flujo de cambio con Git pull manual
+
+### Fuentes (consultadas 2026-10-19)
+
+- Git pull: https://github.com/home-assistant/addons/blob/master/git_pull/DOCS.md
+- Packages: https://www.home-assistant.io/docs/configuration/packages/
