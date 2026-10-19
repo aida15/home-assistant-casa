@@ -6,7 +6,7 @@
 - [x] Zigbee: LinknLink ZG-808Z + Sonoff ZBBridge-P
 - [x] Roomba: Roomba Plus 405 Combo (no soportado por la integración oficial)
 - [x] ZBMINI: 4 → luz techo dorm. Aroa, salón ×2, cocina
-- [ ] ZBMINI: variante exacta y presencia de neutro en las cajas
+- [x] ZBMINI: versión sin neutro (ZBMINI-L; confirmar si L o L2)
 - [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
 - [x] Bloque C · Vivienda y distribución (falta: confirmar ubicación de las 5 persianas)
@@ -19,8 +19,8 @@
 ## Fase 2 · Auditoría
 
 - [x] Auditoría redactada (`02_arquitectura/auditoria_fase2.md`)
-- [ ] Prueba del frontend de HA en la tablet Huawei (R-10)
-- [ ] Validación de la auditoría por Aida → cierre de Fase 2
+- [ ] Prueba del frontend de HA en la tablet Huawei (R-10) — 1.er intento: la app se queda en «buscando en la red doméstica» → probar con IP manual
+- [x] Validación de la auditoría por Aida → **Fase 2 cerrada (2026-10-19)**
 
 ## Fechas clave
 

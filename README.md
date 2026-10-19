@@ -9,8 +9,8 @@ Proyecto de migración de Google Home a Home Assistant: instalación domótica r
 | Fase | Estado |
 |---|---|
 | 1. Descubrimiento | ✅ Cerrada (2026-10-19) |
-| 2. Auditoría | **En validación** |
-| 3. Arquitectura | Pendiente |
+| 2. Auditoría | ✅ Cerrada (2026-10-19) |
+| 3. Arquitectura | **En curso** |
 | 4. Diseño visual | Pendiente |
 | 5. Preparación | Pendiente |
 | 6. Integración de dispositivos | Pendiente |
