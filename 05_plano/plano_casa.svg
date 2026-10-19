@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 700" width="560" height="700" role="img" aria-label="Plano de la vivienda">
+  <!--
+    Plano de la vivienda · v0.1 (2026-10-19)
+    Trazado a partir del plano de HomeByMe. Medidas APROXIMADAS (escala ≈ 39 px/m).
+    Uso previsto: www/plano/ en la configuración de HA, con estados vinculados por id.
+    Convención de ids: area-<area_id> · luz-<area_id>-<nombre> · temp-<area_id>
+    Colores por variables CSS: el tema de HA (claro/noche) las define.
+    PRIVADO: no publicar (D-003). La versión para redes es otra.
+  -->
+  <style>
+    .exterior   { fill: var(--plano-exterior, #E4DDD2); stroke: none; }
+    .terraza    { fill: var(--plano-terraza, #E9E2D8); stroke: var(--plano-muro-suave, #CFC5B8); stroke-width: 1.5; stroke-dasharray: 4 4; }
+    .estancia   { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro, #8A8178); stroke-width: 3; stroke-linejoin: round; }
+    .estancia.activa { fill: var(--plano-activa, #F3DED3); stroke: var(--acento, #B04F2C); }
+    .ventana    { stroke: var(--plano-ventana, #9FB3BF); stroke-width: 5; stroke-linecap: butt; }
+    .columna    { fill: var(--plano-muro, #8A8178); }
+    .rotulo     { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: var(--plano-texto, #655D54); }
+    .rotulo.activa { fill: var(--acento-texto, #93401F); font-weight: 700; }
+    .rotulo-ext { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 12px; font-weight: 500; fill: var(--plano-texto-suave, #8A8178); }
+    .temp       { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: var(--plano-texto, #655D54); font-variant-numeric: tabular-nums; }
+    .luz circle { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro-suave, #CFC5B8); stroke-width: 1.5; }
+    .luz path   { fill: none; stroke: var(--plano-texto, #655D54); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .luz.on circle { fill: var(--acento, #B04F2C); stroke: var(--acento, #B04F2C); }
+    .luz.on path   { stroke: var(--acento-sobre, #FFFFFF); }
+    .luz.no-disponible circle { stroke-dasharray: 3 3; }
+  </style>
+
+  <!-- Exteriores (sin control por ahora) -->
+  <path id="area-jardin" class="exterior" d="M229 10 H547 V438 L452 558 H440 V300 H382 V133 H229 Z"/>
+  <rect id="area-terraza" class="terraza" x="12" y="573" width="195" height="115" rx="4"/>
+  <rect id="columna-jardin" class="columna" x="436" y="129" width="8" height="8"/>
+
+  <!-- Estancias -->
+  <rect id="area-cuarto_limpieza" class="estancia" x="139" y="80" width="90" height="66"/>
+  <rect id="area-cocina" class="estancia" x="139" y="146" width="90" height="167"/>
+  <rect id="area-entrada" class="estancia" x="139" y="313" width="90" height="65"/>
+  <path id="area-salon" class="estancia activa" d="M229 133 H382 V300 H370 V363 H229 Z"/>
+  <path id="area-pasillo" class="estancia" d="M139 378 H229 V363 H370 V413 H177 V448 H110 V378 Z"/>
+  <rect id="area-bano_aroa" class="estancia" x="370" y="300" width="70" height="113"/>
+  <rect id="area-bano_principal" class="estancia" x="10" y="378" width="100" height="70"/>
+  <rect id="area-habitacion_principal" class="estancia" x="10" y="448" width="167" height="120"/>
+  <rect id="area-estudio" class="estancia" x="177" y="413" width="125" height="145"/>
+  <rect id="area-habitacion_aroa" class="estancia" x="302" y="413" width="138" height="145"/>
+
+  <!-- Ventanas del salón (posición aproximada; base para las persianas) -->
+  <line id="ventana-salon-norte" class="ventana" x1="262" y1="133" x2="350" y2="133"/>
+  <line id="ventana-salon-este" class="ventana" x1="382" y1="150" x2="382" y2="285"/>
+
+  <!-- Rótulos -->
+  <text class="rotulo" x="147" y="100">Limpieza</text>
+  <text class="rotulo" x="147" y="166">Cocina</text>
+  <text class="rotulo" x="147" y="333">Entrada</text>
+  <text class="rotulo activa" x="239" y="156">Salón</text>
+  <text class="rotulo" x="239" y="393">Pasillo</text>
+  <text class="rotulo" x="376" y="320" style="font-size: 11px">Baño</text>
+  <text class="rotulo" x="376" y="334" style="font-size: 11px">Aroa</text>
+  <text class="rotulo" x="18" y="398">Baño</text>
+  <text class="rotulo" x="18" y="468">Hab. principal</text>
+  <text class="rotulo" x="185" y="433">Estudio</text>
+  <text class="rotulo" x="310" y="433">Hab. Aroa</text>
+  <text class="rotulo-ext" x="450" y="60">Jardín</text>
+  <text class="rotulo-ext" x="20" y="594">Terraza</text>
+
+  <!-- Temperaturas (zonas tado) -->
+  <text id="temp-salon" class="temp" x="239" y="350">21,0°</text>
+  <text id="temp-estudio" class="temp" x="185" y="546">19,8°</text>
+  <text id="temp-habitacion_aroa" class="temp" x="310" y="546">20,5°</text>
+  <text id="temp-habitacion_principal" class="temp" x="18" y="556">20,1°</text>
+
+  <!-- Luces (posiciones aproximadas, a ajustar con la ubicación real de los puntos de luz) -->
+  <g id="luz-salon-techo_1" class="luz on" transform="translate(286 214)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
+  <g id="luz-salon-techo_2" class="luz on" transform="translate(326 296)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
+  <g id="luz-cocina-techo" class="luz" transform="translate(184 236)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
+  <g id="luz-habitacion_aroa-techo" class="luz" transform="translate(371 488)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
+</svg>

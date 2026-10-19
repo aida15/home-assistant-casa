@@ -44,3 +44,5 @@ Estado: **en definición** (Fase 1). No es todavía el sistema de diseño; eso s
 ## Entregas de la Fase 4
 
 - Entrega 1: `fase4_entrega1.md`
+- Entrega 2: `fase4_entrega2.md`
+- Entrega 3: `fase4_entrega3.md` (plano vectorial, D-026; sustituye la idea del render de HomeByMe)
