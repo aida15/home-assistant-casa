@@ -22,7 +22,7 @@ Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunit
 | DEV-14 | Válvulas termostáticas + termostato | tado **V3** (con suscripción Auto-Assist) | 4 + 1 | Dorm. principal, dorm. Aroa, estudio, salón + termostato salón | Propietario tado vía Internet Bridge | ✅ **Ya integrado en local vía HomeKit** (bridge IB01 + 4 SRT01 + 1 ST01). También integrado por la nube (duplicado) | HomeKit: No · Integración tado: Sí | 🗓️ Renovación finales de marzo 2027 |
 | DEV-15 | Televisor | LG **UK6470PLC** (webOS) | 1 | Salón | Wi-Fi/Ethernet | Oficial «LG webOS TV» (local) — **descubierta por HA, sin añadir** | No | — |
 | DEV-16 | Sofá motorizado (en regleta) | — | 1 | Salón | Sin conectividad propia | Solo vía regleta (alimentación) | — | — |
-| DEV-17 | Relés Zigbee | Sonoff **ZBMINI-L** (sin neutro) | 4 | Sin instalar. Destino: luz de techo dorm. Aroa, salón (×2), cocina | Zigbee | Zigbee (coordinador propio, local) | No | Confirmar si son ZBMINI-L o ZBMINI-L2. Sin neutro suelen actuar como dispositivo final, no como repetidor de malla (H). Revisar carga mínima con LED (H). Mantener interruptor físico |
+| DEV-17 | Relés Zigbee | Sonoff **ZBMINIL2** (sin neutro) | 4 | Sin instalar. Destino: luz de techo dorm. Aroa, salón (×2), cocina | Zigbee | Zigbee (coordinador propio, local) | No | Sin neutro suelen actuar como dispositivo final, no como repetidor de malla (H). Revisar carga mínima con LED (H). Mantener interruptor físico |
 
 | DEV-18 | Robot aspirador antiguo | Roborock | 1 | — | Wi-Fi | Oficial «Roborock» — configurada en HA | Sí | 🗑️ **Ya no se usa** → retirar la integración (D-009) |
 

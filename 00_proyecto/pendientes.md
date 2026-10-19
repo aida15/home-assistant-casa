@@ -6,7 +6,7 @@
 - [x] Zigbee: LinknLink ZG-808Z + Sonoff ZBBridge-P
 - [x] Roomba: Roomba Plus 405 Combo (no soportado por la integración oficial)
 - [x] ZBMINI: 4 → luz techo dorm. Aroa, salón ×2, cocina
-- [x] ZBMINI: versión sin neutro (ZBMINI-L; confirmar si L o L2)
+- [x] ZBMINI: ZBMINIL2 (sin neutro)
 - [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
 - [x] Bloque C · Vivienda y distribución (falta: confirmar ubicación de las 5 persianas)
