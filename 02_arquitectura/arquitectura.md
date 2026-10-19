@@ -9,8 +9,8 @@ Se entrega por bloques; cada bloque queda **propuesto** hasta que Aida lo aprueb
 | 3 | Acceso remoto con dominio propio | ✅ **Aprobado** (2026-10-19): Cloudflare Tunnel |
 | 4 | Estructura de configuración (YAML + Git) y acceso de Claude | ✅ **Aprobado** (2026-10-19) |
 | 5 | Usuarios y permisos | ✅ **Aprobado** (2026-10-19) |
-| 6 | Decisiones de integración (Tuya, tado nube) | **Propuesto** |
-| 7 | Análisis de fallos | Pendiente |
+| 6 | Decisiones de integración (Tuya, tado nube) | ✅ **Aprobado** (2026-10-19) |
+| 7 | Análisis de fallos | **Propuesto** |
 
 ---
 
@@ -365,8 +365,64 @@ Las cuentas de usuario normal no ven Ajustes ni pueden cambiar la configuración
 
 ### Sobre HACS (tienda comunitaria)
 
-Hará falta para tuya-local, Midea y probablemente para tarjetas visuales del dashboard. **No se instala hasta que haya un primer uso justificado** (Fase 4 o 6). Cada extensión de HACS pasará la ficha del punto 5 de los requisitos (problema, ventajas, dependencias, riesgos, mantenimiento, plan B).
+HACS (Home Assistant Community Store) es el canal para instalar **extensiones hechas por la comunidad**: integraciones, tarjetas, temas. Es gratuito; su «coste» es de riesgo: lo que instala **no lo revisa ni lo prueba el equipo de HA** ✅ y puede romperse con una actualización o quedar abandonado.
+
+**Novedad clave:** a partir de **HA 2026.11** viene **integrado de serie como «Marketplace»** ✅ (ya fusionado en desarrollo a principios de octubre de 2026). No hay que instalar nada aparte, no requiere cuenta de GitHub para el catálogo y obliga a aceptar un aviso antes de instalar contenido comunitario ✅.
+
+**Decisión:** **no instalar HACS a mano**. Esperar a 2026.11 y usar el Marketplace integrado, solo cuando haya un primer uso justificado (Fase 4 o 6). Cada extensión pasará la ficha del punto 5 de los requisitos (problema, ventajas, dependencias, riesgos, mantenimiento, plan B).
+
+Fuentes: https://hacs.xyz/ · https://www.matteralpha.com/news/home-assistant-embraces-hacs-into-core-as-the-marketplace
 
 ### Decisión que pide este bloque
 
-- [ ] Aprobar las decisiones de integración
+- [x] Decisiones de integración aprobadas (D-023)
+
+---
+
+## Bloque 7 · Análisis de fallos
+
+Principio rector: **si HA se cae, la casa sigue funcionando como una casa normal** (interruptores, termostatos y apps de fabricante). Tolerancia declarada: una tarde caída = molestia (Fase 1).
+
+### 7.1 Escenarios
+
+| Escenario | Deja de funcionar | Sigue funcionando | Cómo se detecta | Recuperación | Prevención |
+|---|---|---|---|---|---|
+| **Sin Internet** | Acceso remoto, cámaras Nest, Tuya (nube), voz de Google, backups a Drive, notificaciones al móvil fuera de casa | Todo lo local: luces Zigbee, tado vía HomeKit, TV LG, dashboards en casa | Sensor de conectividad en HA; aviso en el dashboard | Automática al volver Internet; los backups pendientes se reintentan ✅ | Lo esencial, en local (Bloque 6) |
+| **Reinicio del router** | Todo durante 1-3 min | — | Igual que arriba | Automática; la **reserva DHCP** mantiene la IP de la Pi | Reserva DHCP (Fase 5) |
+| **HA caído o reiniciando** | Automatizaciones, dashboards, presencia | **Interruptores de pared** (los ZBMINIL2 conmutan en local), tado con su propia programación, apps de fabricante, **Google Home** | Desde dentro no se puede avisar → monitor externo gratuito que vigile la URL pública 🔍 (opcional) | Reinicio; si no arranca, restaurar backup | **No borrar los dispositivos de Google Home**: es el plan B de control |
+| **Fallo de la Pi o del SSD** | Todo HA | Igual que «HA caído» | HA no responde | Instalar HAOS en otro soporte y **restaurar el último backup** (procedimiento probado en la migración a SSD); objetivo ~1-2 h 🔍 | Backups cada 2 días + Drive; microSD de repuesto |
+| **Dongle Zigbee desconectado** | Control de las 4 luces desde HA | Interruptores de pared | Dispositivos Zigbee «no disponibles»; aviso | Reconectar; si el dongle muere, ZHA migra a otro coordinador desde su backup ✅ | Alargador USB fijo, sin tirones |
+| **Un dispositivo sin conexión** | Ese dispositivo en HA | El resto | Entidad «no disponible» > X min → aviso (Fase 8) | Revisar alimentación / Wi-Fi | Sin notificaciones por cortes breves (umbral de tiempo) |
+| **Caída de la nube de un fabricante** (Tuya, Google, tado) | Los dispositivos de ese fabricante vía nube | tado vía HomeKit; todo lo local | Entidades «no disponibles» | Esperar; control manual o app del fabricante | Migrar a local lo que más se usa si se repite |
+| **Una actualización rompe una integración** | Esa integración | El resto | Error tras actualizar | **Backup previo automático** ✅ → restaurar o volver a la versión anterior | Leer notas de versión; no actualizar todo a la vez; esperar unos días a la versión `.1` |
+| **Tablet sin batería o sin conexión** | El panel | Móviles, interruptores | Visual | Cargar; la app de panel recarga sola al volver la red (Fase 4) | Tablet siempre enchufada; plan de batería en Fase 4 |
+| **Apagón de la casa** | Todo | — | — | Al volver la luz, la Pi arranca sola; Zigbee y Wi-Fi se reconectan | Definir el estado de las luces tras un corte (ZBMINIL2: «apagado» o «último estado») 🔍 |
+
+### 7.2 Consecuencias de diseño
+
+1. **Google Home se mantiene** como canal de control de reserva para lo que ya controla hoy.
+2. **Ninguna automatización sustituye a un interruptor físico.**
+3. Los avisos de fallo distinguen cortes breves de caídas reales (umbral de tiempo), para no saturar.
+4. Monitor externo de disponibilidad: **opcional**, se decide en la Fase 9.
+
+### Decisión que pide este bloque
+
+- [ ] Aprobar el análisis y sus consecuencias de diseño → **cierre de la Fase 3**
+
+---
+
+## Informe de fase (punto 16.12)
+
+**A. Progreso técnico** — Implementado: nada (fase de diseño). Probado: nada nuevo. Pendiente: prueba de la tablet con IP manual.
+
+**B. Documentación** — Arquitectura completa en 7 bloques; decisiones D-017 a D-023. Repo `home-assistant-config` creado (vacío hasta la Fase 5).
+
+**C. Contenido**
+- «Por qué mi casa sigue funcionando si se cae Home Assistant» (tabla 7.1 → carrusel; solo cuando esté **probado**).
+- «Cloudflare Tunnel vs Tailscale: cuál elegí y por qué» (decisión real con contexto de presencia).
+- «El error de seguridad que casi cometo con el túnel» (`trusted_networks`).
+- «HACS ya viene de serie»: oportuno en noviembre de 2026, tras actualizar a 2026.11.
+
+**D. Producto**
+- Lecciones candidatas: «Diseñar para el fallo», «Acceso remoto seguro sin abrir puertos», «Git para tu configuración de HA».
+- Recurso candidato: **matriz de fallos rellenable** (escenario, qué cae, qué sigue, detección, recuperación).
