@@ -13,8 +13,14 @@
 - [x] Bloque D · Preferencias de diseño (`04_dashboards/direccion_visual.md`)
 - [x] Bloque E · Uso cotidiano (`00_proyecto/uso_cotidiano.md`)
 - [x] Bloque F · Seguridad, privacidad y mantenimiento
-- [ ] SSD en desuso: tipo (SATA 2,5" / M.2 NVMe / M.2 SATA) y si hay caja USB
-- [ ] Resumen de requisitos (`00_proyecto/resumen_requisitos_fase1.md`) validado por Aida → cierre de Fase 1
+- [x] SSD en desuso: montado en caja USB
+- [x] Resumen de requisitos (`00_proyecto/resumen_requisitos_fase1.md`) validado por Aida → **Fase 1 cerrada (2026-10-19)**
+
+## Fase 2 · Auditoría
+
+- [x] Auditoría redactada (`02_arquitectura/auditoria_fase2.md`)
+- [ ] Prueba del frontend de HA en la tablet Huawei (R-10)
+- [ ] Validación de la auditoría por Aida → cierre de Fase 2
 
 ## Fechas clave
 
