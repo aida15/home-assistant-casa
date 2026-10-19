@@ -9,9 +9,9 @@
 - [ ] ZBMINI: variante exacta y presencia de neutro en las cajas
 - [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
-- [x] Bloque C · Vivienda y distribución (falta: terraza en el plano, detalle de persianas del salón)
+- [x] Bloque C · Vivienda y distribución (falta: confirmar ubicación de las 5 persianas)
 - [ ] Bloque D · Preferencias de diseño
-- [ ] Bloque E · Uso cotidiano
+- [x] Bloque E · Uso cotidiano (`00_proyecto/uso_cotidiano.md`)
 - [ ] Bloque F · Seguridad, privacidad y mantenimiento
 - [ ] Resumen de requisitos validado por Aida → cierre de Fase 1
 

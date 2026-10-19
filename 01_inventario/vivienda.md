@@ -24,17 +24,18 @@ Nombres de área sin tildes ni ñ (D-004).
 | Baño Aroa | `bano_aroa` | 5,3 | — | Cabezal previsto |
 | Habitación principal | `habitacion_principal` | 15,7 | Válvula tado | En el plano figura como «Dormitorio» |
 | Baño principal | `bano_principal` | 4,9 | — | Cabezal previsto |
-| Jardín | `jardin` | 29,5 (H) | Sensor de lluvia | (H) Zona verde «Exterior 1», junto al salón |
-| Terraza | `terraza` | (pendiente) | — | ⚠️ Confirmar cuál es en el plano |
+| Jardín | `jardin` | ~67 (29,5 + 37,6) | Sensor de lluvia | «Exterior 1» + «Exterior 6». Acceso único desde el salón. Contiene una columna («habitación 15») |
+| Terraza | `terraza` | 17,1 | — | «Exterior 5», accesible desde la habitación principal |
 | Garaje | `garaje` | — | — | Fuera de alcance por ahora (poca cobertura) |
 | — | — | — | Deshumidificador Midea | **Móvil**: sin área fija |
 
-Elementos del plano **sin uso en HA**: «habitación 10/12/14/15» y «Exterior 2/4» (huecos o restos del modelado, < 1 m²).
+Elementos del plano **sin uso en HA**: «habitación 10/12/14» (tabiques interiores), «habitación 15» (columna del jardín) y «Exterior 2/4» (restos del modelado).
 
 ## Persianas
 
 - Ninguna motorizada todavía. **Se empieza por el salón.**
-- Pendiente: número de ventanas con persiana en el salón, tipo (cinta, manivela), si hay caja accesible y si hay corriente/neutro cerca.
+- **5 persianas de cinta** (confirmar si las 5 son del salón).
+- Sin toma de corriente junto a las cajas: por eso no están motorizadas. **Presupuestos de instalación eléctrica pendientes.**
 
 ## Tablet de control
 
