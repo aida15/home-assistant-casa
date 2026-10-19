@@ -9,7 +9,7 @@
 - [ ] ZBMINI: variante exacta y presencia de neutro en las cajas
 - [ ] Sensores Wi-Fi sin funcionar: **despriorizados por decisión de Aida** (2026-10-19); se retoman en Fase 6
 - [ ] Modelos restantes (ver `01_inventario/dispositivos.md`)
-- [ ] Bloque C · Vivienda y distribución
+- [x] Bloque C · Vivienda y distribución (falta: terraza en el plano, detalle de persianas del salón)
 - [ ] Bloque D · Preferencias de diseño
 - [ ] Bloque E · Uso cotidiano
 - [ ] Bloque F · Seguridad, privacidad y mantenimiento
@@ -32,6 +32,11 @@ Hipótesis preliminares, a confirmar:
 - **R-07 · Sin SSH configurado** — se resolverá con el complemento oficial de terminal/SSH cuando haga falta.
 - **R-08 · Roomba posiblemente de la gama x05** — no soportada por la integración oficial; confirmar modelo.
 - **R-09 · Dispositivos Wi-Fi que hoy no funcionan** — sensores de agua (crítico: detección de fugas) y otros.
+
+## Cambios aprobados, pendientes de ejecutar (tras el primer backup)
+
+- [ ] D-009 · Retirar integración Roborock
+- [ ] D-010 · Renombrar área «Zona gaming» → «Estudio»
 
 ## Acciones previas a cualquier cambio (Fase 5, adelantables)
 

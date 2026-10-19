@@ -1,37 +1,42 @@
 # Vivienda y distribución
 
-Datos aportados por Aida (2026-10-19). El plano real **no se sube a redes** (D-003); el original se guarda en `05_plano/privado/`, carpeta excluida de Git por `.gitignore` (decidir si se versiona dentro del repo privado).
+Datos aportados por Aida (2026-10-19) + plano exportado de HomeByMe (aprox. fiel a la realidad, no 100 % amueblado). El plano real **no se publica** (D-003); el original queda fuera de Git hasta decidir si se versiona en el repo privado.
 
 ## Estructura
 
 - **Plantas:** 1
-- **Plano disponible:** sí (plano + modelo en HomeByMe) — pendiente de recibir
+- **Superficie interior aproximada** (suma de estancias del plano): ~102 m²
+- Superficies tomadas del plano de HomeByMe: **aproximadas**
 
-## Estancias (propuesta de áreas en HA, nombres sin tildes ni ñ)
+## Estancias y áreas en HA
 
-| Estancia | ID de área propuesto | Dispositivos conocidos | Notas |
-|---|---|---|---|
-| Entrada | `entrada` | Nest Cam, Google Home | Ubicación probable de la tablet |
-| Pasillo | `pasillo` | — | |
-| Cocina | `cocina` | Regleta GHome, 2 sensores de agua, ZBMINI (luz techo, previsto) | |
-| Cuarto de limpieza | `cuarto_limpieza` | Fingerbot MOES (calefactor) | |
-| Salón | `salon` | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado, 2 ZBMINI (luces techo, previsto) | |
-| Jardín | `jardin` | Sensor de lluvia | |
-| Habitación Aroa | `habitacion_aroa` | Válvula tado, ZBMINI (luz techo, previsto) | |
-| Estudio | `estudio` | Válvula tado, ventilador Create | |
-| Baño Aroa | `bano_aroa` | — | Cabezal previsto |
-| Habitación principal | `habitacion_principal` | Válvula tado | |
-| Baño principal | `bano_principal` | — | Cabezal previsto |
-| Terraza | `terraza` | — | |
-| Garaje | `garaje` | — | Fuera de alcance por ahora (poca cobertura) |
-| Zona gaming (?) | — | tado Internet Bridge (según HA) | ⚠️ Área existente en HA no mencionada: ¿espacio real o área de prueba? |
-| — | — | Deshumidificador Midea | **Móvil**: sin área fija |
+Nombres de área sin tildes ni ñ (D-004).
+
+| Estancia | ID de área | m² (plano) | Dispositivos conocidos | Notas |
+|---|---|---|---|---|
+| Entrada | `entrada` | 6,0 | Nest Cam, Google Home | Ubicación probable de la tablet |
+| Pasillo | `pasillo` | 4,3 | — | Distribuidor hacia baño principal, estudio, habitación Aroa y baño Aroa |
+| Cocina | `cocina` | 10,2 | Regleta GHome, 2 sensores de agua, ZBMINI (luz techo, previsto) | Cabezal previsto |
+| Cuarto de limpieza | `cuarto_limpieza` | 4,3 | Fingerbot MOES (calefactor) | En el plano figura como «Lavandería» |
+| Salón | `salon` | 23,4 | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado, 2 ZBMINI (luces techo, previsto) | Grandes ventanales (norte y este, H). **Primeras persianas a motorizar** |
+| Estudio | `estudio` | 13,4 | Válvula tado, ventilador Create, tado Internet Bridge | Antes «Zona gaming» (D-010) |
+| Habitación Aroa | `habitacion_aroa` | 14,6 | Válvula tado, ZBMINI (luz techo, previsto) | |
+| Baño Aroa | `bano_aroa` | 5,3 | — | Cabezal previsto |
+| Habitación principal | `habitacion_principal` | 15,7 | Válvula tado | En el plano figura como «Dormitorio» |
+| Baño principal | `bano_principal` | 4,9 | — | Cabezal previsto |
+| Jardín | `jardin` | 29,5 (H) | Sensor de lluvia | (H) Zona verde «Exterior 1», junto al salón |
+| Terraza | `terraza` | (pendiente) | — | ⚠️ Confirmar cuál es en el plano |
+| Garaje | `garaje` | — | — | Fuera de alcance por ahora (poca cobertura) |
+| — | — | — | Deshumidificador Midea | **Móvil**: sin área fija |
+
+Elementos del plano **sin uso en HA**: «habitación 10/12/14/15» y «Exterior 2/4» (huecos o restos del modelado, < 1 m²).
 
 ## Persianas
 
-- No hay ninguna motorizada. **Interés en domotizarlas** → inventario de ventanas y tipo de persiana pendiente.
+- Ninguna motorizada todavía. **Se empieza por el salón.**
+- Pendiente: número de ventanas con persiana en el salón, tipo (cinta, manivela), si hay caja accesible y si hay corriente/neutro cerca.
 
 ## Tablet de control
 
-- **Huawei BAH-W09** (MediaPad M3 Lite 10, 2017, salió con Android 7 — H). Compatibilidad con la Companion App actual **pendiente de verificar** en la auditoría.
+- **Huawei BAH-W09** (MediaPad M3 Lite 10, 2017, Android 7 de serie — H). Compatibilidad con la Companion App actual **pendiente de verificar**.
 - Ubicación: probablemente la entrada (no decidido).

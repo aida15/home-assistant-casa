@@ -24,7 +24,7 @@ Leyenda integración: **Oficial-local** · **Oficial-nube** · **HACS** (comunit
 | DEV-16 | Sofá motorizado (en regleta) | — | 1 | Salón | Sin conectividad propia | Solo vía regleta (alimentación) | — | — |
 | DEV-17 | Relés Zigbee | Sonoff **ZBMINI** | 4 | Sin instalar. Destino: luz de techo dorm. Aroa, salón (×2), cocina | Zigbee | Zigbee (coordinador propio, local) | No | Confirmar variante (ZBMINI requiere neutro; ZBMINI-L no) y si hay neutro en las cajas. Mantener interruptor físico (S1/S2) |
 
-| DEV-18 | ¿? | Roborock | 1 | — | Wi-Fi | Oficial «Roborock» — **ya configurada en HA** | Sí (H) | ⚠️ No mencionado por Aida: identificar |
+| DEV-18 | Robot aspirador antiguo | Roborock | 1 | — | Wi-Fi | Oficial «Roborock» — configurada en HA | Sí | 🗑️ **Ya no se usa** → retirar la integración (D-009) |
 
 ## Planes declarados
 
