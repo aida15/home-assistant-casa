@@ -1,75 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 700" width="560" height="700" role="img" aria-label="Plano de la vivienda">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 20 860 1000" width="860" height="1000" role="img" aria-label="Plano de la vivienda">
   <!--
-    Plano de la vivienda · v0.1 (2026-10-19)
-    Trazado a partir del plano de HomeByMe. Medidas APROXIMADAS (escala ≈ 39 px/m).
+    Plano de la vivienda · v0.2 (2026-10-19)
+    Trazado sobre el plano de obra aportado por Aida (escala ≈ 59 px/m). Medidas APROXIMADAS.
     Uso previsto: www/plano/ en la configuración de HA, con estados vinculados por id.
-    Convención de ids: area-<area_id> · luz-<area_id>-<nombre> · temp-<area_id>
-    Colores por variables CSS: el tema de HA (claro/noche) las define.
-    PRIVADO: no publicar (D-003). La versión para redes es otra.
+    Ids: area-<area_id> · luz-<area_id>-<nombre> · punto-luz-<area_id> · temp-<area_id>
+         puerta-<area_a>-<area_b> · ventana-<area_id>-<orientacion>
+    (H) = hipótesis pendiente de confirmar.
+    Colores por variables CSS con valores de reserva del tema de día.
+    PRIVADO: no publicar (D-003).
   -->
   <style>
-    .exterior   { fill: var(--plano-exterior, #E4DDD2); stroke: none; }
-    .terraza    { fill: var(--plano-terraza, #E9E2D8); stroke: var(--plano-muro-suave, #CFC5B8); stroke-width: 1.5; stroke-dasharray: 4 4; }
-    .estancia   { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro, #8A8178); stroke-width: 3; stroke-linejoin: round; }
+    .cesped     { fill: var(--plano-cesped, #DCE3D2); }
+    .suelo-ext  { fill: var(--plano-exterior, #E4DDD2); }
+    .terraza    { fill: var(--plano-exterior, #E4DDD2); stroke: var(--plano-muro-suave, #CFC5B8); stroke-width: 2; stroke-dasharray: 6 6; }
+    .estancia   { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro, #8A8178); stroke-width: 5; stroke-linejoin: round; }
     .estancia.activa { fill: var(--plano-activa, #F3DED3); stroke: var(--acento, #B04F2C); }
-    .ventana    { stroke: var(--plano-ventana, #9FB3BF); stroke-width: 5; stroke-linecap: butt; }
-    .columna    { fill: var(--plano-muro, #8A8178); }
-    .rotulo     { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: var(--plano-texto, #655D54); }
+    .ventana    { stroke: var(--plano-ventana, #8FA8B6); stroke-width: 8; stroke-linecap: butt; }
+    .puerta     { stroke: var(--plano-puerta, #B59878); stroke-width: 8; stroke-linecap: butt; }
+    .puerta.abierta, .ventana.abierta { stroke: var(--acento, #B04F2C); }
+    .rotulo     { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 19px; font-weight: 600; fill: var(--plano-texto, #655D54); }
     .rotulo.activa { fill: var(--acento-texto, #93401F); font-weight: 700; }
-    .rotulo-ext { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 12px; font-weight: 500; fill: var(--plano-texto-suave, #8A8178); }
-    .temp       { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: var(--plano-texto, #655D54); font-variant-numeric: tabular-nums; }
-    .luz circle { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro-suave, #CFC5B8); stroke-width: 1.5; }
-    .luz path   { fill: none; stroke: var(--plano-texto, #655D54); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .rotulo-ext { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 18px; font-weight: 500; fill: var(--plano-texto-suave, #7D756B); }
+    .temp       { font-family: Figtree, 'Segoe UI', system-ui, sans-serif; font-size: 19px; font-weight: 600; fill: var(--plano-texto, #655D54); font-variant-numeric: tabular-nums; }
+    .punto-luz  { fill: none; stroke: var(--plano-muro-suave, #B8AE9F); stroke-width: 2.5; }
+    .luz circle { fill: var(--plano-suelo, #FBF9F6); stroke: var(--plano-muro-suave, #B8AE9F); stroke-width: 2.5; }
+    .luz path   { fill: none; stroke: var(--plano-texto, #655D54); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
     .luz.on circle { fill: var(--acento, #B04F2C); stroke: var(--acento, #B04F2C); }
     .luz.on path   { stroke: var(--acento-sobre, #FFFFFF); }
-    .luz.no-disponible circle { stroke-dasharray: 3 3; }
+    .luz.no-disponible circle { stroke-dasharray: 5 5; }
   </style>
 
-  <!-- Exteriores (sin control por ahora) -->
-  <path id="area-jardin" class="exterior" d="M229 10 H547 V438 L452 558 H440 V300 H382 V133 H229 Z"/>
-  <rect id="area-terraza" class="terraza" x="12" y="573" width="195" height="115" rx="4"/>
-  <rect id="columna-jardin" class="columna" x="436" y="129" width="8" height="8"/>
+  <!-- Exteriores -->
+  <path id="area-jardin-cesped" class="cesped" d="M250 35 H825 V205 H362 V133 H250 Z"/>
+  <path id="area-jardin-suelo" class="suelo-ext" d="M690 215 H830 V700 Q830 880 690 880 Z"/>
+  <rect id="area-jardin-terraza_1" class="suelo-ext" x="570" y="215" width="115" height="250"/>
+  <rect id="area-terraza" class="terraza" x="30" y="874" width="300" height="146"/>
 
   <!-- Estancias -->
-  <rect id="area-cuarto_limpieza" class="estancia" x="139" y="80" width="90" height="66"/>
-  <rect id="area-cocina" class="estancia" x="139" y="146" width="90" height="167"/>
-  <rect id="area-entrada" class="estancia" x="139" y="313" width="90" height="65"/>
-  <path id="area-salon" class="estancia activa" d="M229 133 H382 V300 H370 V363 H229 Z"/>
-  <path id="area-pasillo" class="estancia" d="M139 378 H229 V363 H370 V413 H177 V448 H110 V378 Z"/>
-  <rect id="area-bano_aroa" class="estancia" x="370" y="300" width="70" height="113"/>
-  <rect id="area-bano_principal" class="estancia" x="10" y="378" width="100" height="70"/>
-  <rect id="area-habitacion_principal" class="estancia" x="10" y="448" width="167" height="120"/>
-  <rect id="area-estudio" class="estancia" x="177" y="413" width="125" height="145"/>
-  <rect id="area-habitacion_aroa" class="estancia" x="302" y="413" width="138" height="145"/>
+  <rect id="area-cuarto_limpieza" class="estancia" x="221" y="153" width="136" height="90"/>
+  <rect id="area-cocina" class="estancia" x="221" y="248" width="136" height="242"/>
+  <rect id="area-entrada" class="estancia" x="222" y="495" width="140" height="137"/>
+  <rect id="area-salon" class="estancia activa" x="362" y="225" width="203" height="345"/>
+  <rect id="area-pasillo" class="estancia" x="362" y="575" width="203" height="65"/>
+  <rect id="area-bano_aroa" class="estancia" x="570" y="470" width="115" height="170"/>
+  <rect id="area-bano_principal" class="estancia" x="30" y="605" width="150" height="95"/>
+  <path id="area-habitacion_principal" class="estancia" d="M180 640 H245 V860 H30 V700 H180 Z"/>
+  <rect id="area-estudio" class="estancia" x="285" y="640" width="177" height="220"/>
+  <rect id="area-habitacion_aroa" class="estancia" x="467" y="640" width="201" height="220"/>
 
-  <!-- Ventanas del salón (posición aproximada; base para las persianas) -->
-  <line id="ventana-salon-norte" class="ventana" x1="262" y1="133" x2="350" y2="133"/>
-  <line id="ventana-salon-este" class="ventana" x1="382" y1="150" x2="382" y2="285"/>
+  <!-- Ventanas -->
+  <line id="ventana-cuarto_limpieza-norte" class="ventana" x1="250" y1="153" x2="350" y2="153"/><!-- (H) -->
+  <line id="ventana-cocina-oeste" class="ventana" x1="221" y1="300" x2="221" y2="440"/><!-- (H) -->
+  <line id="ventana-salon-norte" class="ventana" x1="370" y1="225" x2="558" y2="225"/>
+  <line id="ventana-salon-este" class="ventana" x1="565" y1="232" x2="565" y2="462"/>
+  <line id="ventana-bano_aroa-este" class="ventana" x1="685" y1="560" x2="685" y2="605"/>
+  <line id="ventana-habitacion_principal-sur" class="ventana" x1="75" y1="860" x2="220" y2="860"/>
+  <line id="ventana-estudio-sur" class="ventana" x1="335" y1="860" x2="445" y2="860"/>
+  <line id="ventana-habitacion_aroa-sur" class="ventana" x1="480" y1="860" x2="650" y2="860"/>
+
+  <!-- Puertas -->
+  <line id="puerta-principal" class="puerta" x1="222" y1="582" x2="222" y2="628"/><!-- (H) posición de la puerta de entrada -->
+  <line id="puerta-cuarto_limpieza-cocina" class="puerta" x1="300" y1="245" x2="350" y2="245"/>
+  <line id="puerta-cocina-entrada" class="puerta" x1="258" y1="492" x2="308" y2="492"/>
+  <line id="puerta-entrada-salon" class="puerta" x1="362" y1="505" x2="362" y2="558"/>
+  <line id="puerta-salon-pasillo" class="puerta" x1="512" y1="572" x2="562" y2="572"/><!-- (H) -->
+  <line id="puerta-pasillo-estudio" class="puerta" x1="410" y1="640" x2="458" y2="640"/>
+  <line id="puerta-pasillo-habitacion_aroa" class="puerta" x1="472" y1="640" x2="520" y2="640"/>
+  <line id="puerta-pasillo-bano_aroa" class="puerta" x1="570" y1="585" x2="570" y2="630"/>
+  <line id="puerta-habitacion_principal-bano_principal" class="puerta" x1="180" y1="640" x2="180" y2="690"/>
 
   <!-- Rótulos -->
-  <text class="rotulo" x="147" y="100">Limpieza</text>
-  <text class="rotulo" x="147" y="166">Cocina</text>
-  <text class="rotulo" x="147" y="333">Entrada</text>
-  <text class="rotulo activa" x="239" y="156">Salón</text>
-  <text class="rotulo" x="239" y="393">Pasillo</text>
-  <text class="rotulo" x="376" y="320" style="font-size: 11px">Baño</text>
-  <text class="rotulo" x="376" y="334" style="font-size: 11px">Aroa</text>
-  <text class="rotulo" x="18" y="398">Baño</text>
-  <text class="rotulo" x="18" y="468">Hab. principal</text>
-  <text class="rotulo" x="185" y="433">Estudio</text>
-  <text class="rotulo" x="310" y="433">Hab. Aroa</text>
-  <text class="rotulo-ext" x="450" y="60">Jardín</text>
-  <text class="rotulo-ext" x="20" y="594">Terraza</text>
+  <text class="rotulo" x="230" y="180">Limpieza</text>
+  <text class="rotulo" x="230" y="275">Cocina</text>
+  <text class="rotulo" x="231" y="522">Entrada</text>
+  <text class="rotulo activa" x="374" y="254">Salón</text>
+  <text class="rotulo" x="374" y="602" style="font-size: 16px">Pasillo</text>
+  <text class="rotulo" x="580" y="496" style="font-size: 16px">Baño</text>
+  <text class="rotulo" x="580" y="515" style="font-size: 16px">Aroa</text>
+  <text class="rotulo" x="40" y="630">Baño</text>
+  <text class="rotulo" x="40" y="728">Hab. principal</text>
+  <text class="rotulo" x="294" y="666">Estudio</text>
+  <text class="rotulo" x="476" y="666">Hab. Aroa</text>
+  <text class="rotulo-ext" x="680" y="80">Jardín</text>
+  <text class="rotulo-ext" x="578" y="242" style="font-size: 15px">Terraza 1</text>
+  <text class="rotulo-ext" x="40" y="902">Terraza</text>
 
   <!-- Temperaturas (zonas tado) -->
-  <text id="temp-salon" class="temp" x="239" y="350">21,0°</text>
-  <text id="temp-estudio" class="temp" x="185" y="546">19,8°</text>
-  <text id="temp-habitacion_aroa" class="temp" x="310" y="546">20,5°</text>
-  <text id="temp-habitacion_principal" class="temp" x="18" y="556">20,1°</text>
+  <text id="temp-salon" class="temp" x="374" y="556">21,0°</text>
+  <text id="temp-estudio" class="temp" x="294" y="846">19,8°</text>
+  <text id="temp-habitacion_aroa" class="temp" x="476" y="846">20,5°</text>
+  <text id="temp-habitacion_principal" class="temp" x="40" y="846">20,1°</text>
 
-  <!-- Luces (posiciones aproximadas, a ajustar con la ubicación real de los puntos de luz) -->
-  <g id="luz-salon-techo_1" class="luz on" transform="translate(286 214)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
-  <g id="luz-salon-techo_2" class="luz on" transform="translate(326 296)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
-  <g id="luz-cocina-techo" class="luz" transform="translate(184 236)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
-  <g id="luz-habitacion_aroa-techo" class="luz" transform="translate(371 488)"><circle r="17"/><path d="M-4 7h8M-3 10h6M0 -10a7 7 0 0 0-4 12.7c.7.6 1.2 1.4 1.2 2.4h5.6c0-1 .5-1.8 1.2-2.4A7 7 0 0 0 0 -10z"/></g>
+  <!-- Puntos de luz de techo sin domotizar (referencia para el futuro) -->
+  <circle id="punto-luz-cuarto_limpieza" class="punto-luz" cx="295" cy="200" r="9"/>
+  <circle id="punto-luz-entrada" class="punto-luz" cx="310" cy="555" r="9"/>
+  <circle id="punto-luz-pasillo" class="punto-luz" cx="480" cy="607" r="9"/>
+  <circle id="punto-luz-bano_aroa" class="punto-luz" cx="625" cy="555" r="9"/>
+  <circle id="punto-luz-bano_principal" class="punto-luz" cx="110" cy="652" r="9"/>
+  <circle id="punto-luz-habitacion_principal" class="punto-luz" cx="135" cy="772" r="9"/>
+  <circle id="punto-luz-estudio" class="punto-luz" cx="370" cy="757" r="9"/>
+
+  <!-- Luces domotizadas (ZBMINIL2) -->
+  <g id="luz-salon-techo_1" class="luz on" transform="translate(465 325)"><circle r="30"/><path d="M-6 10h12M-4.5 15h9M0 -15a10.5 10.5 0 0 0-6 19c1 .9 1.8 2.1 1.8 3.6h8.4c0-1.5.8-2.7 1.8-3.6A10.5 10.5 0 0 0 0 -15z"/></g>
+  <g id="luz-salon-techo_2" class="luz on" transform="translate(470 490)"><circle r="30"/><path d="M-6 10h12M-4.5 15h9M0 -15a10.5 10.5 0 0 0-6 19c1 .9 1.8 2.1 1.8 3.6h8.4c0-1.5.8-2.7 1.8-3.6A10.5 10.5 0 0 0 0 -15z"/></g>
+  <g id="luz-cocina-techo" class="luz" transform="translate(295 375)"><circle r="30"/><path d="M-6 10h12M-4.5 15h9M0 -15a10.5 10.5 0 0 0-6 19c1 .9 1.8 2.1 1.8 3.6h8.4c0-1.5.8-2.7 1.8-3.6A10.5 10.5 0 0 0 0 -15z"/></g>
+  <g id="luz-habitacion_aroa-techo" class="luz" transform="translate(575 757)"><circle r="30"/><path d="M-6 10h12M-4.5 15h9M0 -15a10.5 10.5 0 0 0-6 19c1 .9 1.8 2.1 1.8 3.6h8.4c0-1.5.8-2.7 1.8-3.6A10.5 10.5 0 0 0 0 -15z"/></g>
 </svg>

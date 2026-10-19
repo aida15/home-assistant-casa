@@ -1,35 +1,34 @@
 # Vivienda y distribución
 
-Datos aportados por Aida (2026-10-19) + plano exportado de HomeByMe (aprox. fiel a la realidad, no 100 % amueblado). El plano real **no se publica** (D-003); el original queda fuera de Git hasta decidir si se versiona en el repo privado.
+Datos aportados por Aida (2026-10-19): plano de HomeByMe y, como referencia definitiva, **plano de obra** con puntos de luz marcados. El plano real **no se publica** (D-003); el original queda fuera de Git hasta decidir si se versiona en el repo privado.
 
 ## Estructura
 
 - **Plantas:** 1
-- **Superficie interior aproximada** (suma de estancias del plano): ~102 m²
-- Superficies tomadas del plano de HomeByMe: **aproximadas**
+- **Superficie interior útil** (suma del plano de obra): ≈ 86 m²
 
 ## Estancias y áreas en HA
 
-Nombres de área sin tildes ni ñ (D-004).
+Superficies del **plano de obra** (aportado por Aida el 2026-10-19), que sustituye al de HomeByMe como referencia. Nombres de área sin tildes ni ñ (D-004).
 
-| Estancia | ID de área | m² (plano) | Dispositivos conocidos | Notas |
-|---|---|---|---|---|
-| Entrada | `entrada` | 6,0 | Nest Cam, Google Home | Ubicación probable de la tablet |
-| Pasillo | `pasillo` | 4,3 | — | Distribuidor hacia baño principal, estudio, habitación Aroa y baño Aroa |
-| Cocina | `cocina` | 10,2 | Regleta GHome, 2 sensores de agua, ZBMINI (luz techo, previsto) | Cabezal previsto |
-| Cuarto de limpieza | `cuarto_limpieza` | 4,3 | Fingerbot MOES (calefactor) | En el plano figura como «Lavandería» |
-| Salón | `salon` | 23,4 | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado, 2 ZBMINI (luces techo, previsto) | Grandes ventanales (norte y este, H). **Primeras persianas a motorizar** |
-| Estudio | `estudio` | 13,4 | Válvula tado, ventilador Create, tado Internet Bridge | Antes «Zona gaming» (D-010) |
-| Habitación Aroa | `habitacion_aroa` | 14,6 | Válvula tado, ZBMINI (luz techo, previsto) | |
-| Baño Aroa | `bano_aroa` | 5,3 | — | Cabezal previsto |
-| Habitación principal | `habitacion_principal` | 15,7 | Válvula tado | En el plano figura como «Dormitorio» |
-| Baño principal | `bano_principal` | 4,9 | — | Cabezal previsto |
-| Jardín | `jardin` | ~67 (29,5 + 37,6) | Sensor de lluvia | «Exterior 1» + «Exterior 6». Acceso único desde el salón. Contiene una columna («habitación 15») |
-| Terraza | `terraza` | 17,1 | — | «Exterior 5», accesible desde la habitación principal |
-| Garaje | `garaje` | — | — | Fuera de alcance por ahora (poca cobertura) |
-| — | — | — | Deshumidificador Midea | **Móvil**: sin área fija |
+| Estancia | ID de área | m² (obra) | Nombre en el plano de obra | Puntos de luz de techo | Dispositivos conocidos | Notas |
+|---|---|---|---|---|---|---|
+| Entrada | `entrada` | 5,13 | Vestíbulo | 1 | Nest Cam, Google Home | Conecta con cocina, salón y la calle. **No** conecta con pasillo ni con la habitación principal |
+| Pasillo | `pasillo` | 3,51 | Pasillo | 1 | — | Da a estudio, hab. Aroa y baño Aroa |
+| Cocina | `cocina` | ≈ 8,7 | Cocina | 1 (ZBMINIL2 previsto) | Regleta GHome, 2 sensores de agua | Cabezal previsto |
+| Cuarto de limpieza | `cuarto_limpieza` | 3,57 | Tendedero | 1 | Fingerbot MOES (calefactor) | Puerta a la cocina |
+| Salón | `salon` | 19,88 | Salón | 2 (ZBMINIL2 previstos) | Nest Cam, Nest Mini, 2 regletas, enchufe (lámpara), TV LG, sofá motorizado, válvula + termostato tado | Ventanales norte y este. **Primeras persianas a motorizar** |
+| Estudio | `estudio` | 11,34 | Dormitorio 2 | 1 | Válvula tado, ventilador Create, tado Internet Bridge | Antes «Zona gaming» (D-010) |
+| Habitación Aroa | `habitacion_aroa` | 12,45 | Dormitorio 3 | 1 (ZBMINIL2 previsto) | Válvula tado | |
+| Baño Aroa | `bano_aroa` | 4,36 | Baño | 1 | — | Ducha de pared a pared, sin bidé. Cabezal previsto |
+| Habitación principal | `habitacion_principal` | 13,42 | Dormitorio 1 | 1 | Válvula tado | Baño principal dentro |
+| Baño principal | `bano_principal` | 4,05 | Baño 1 | 1 | — | Ducha de pared a pared, sin bidé. Cabezal previsto |
+| Jardín | `jardin` | — | — | — | Sensor de lluvia | Zona de **césped** al norte + zona **con suelo** al este (incluye «Terraza 1» junto al salón) |
+| Terraza | `terraza` | — | (no se ve entera) | — | — | Junto a la habitación principal, con suelo |
+| Garaje | `garaje` | — | — | — | — | Fuera de alcance por ahora (poca cobertura) |
+| — | — | — | — | — | Deshumidificador Midea | **Móvil**: sin área fija |
 
-Elementos del plano **sin uso en HA**: «habitación 10/12/14» (tabiques interiores), «habitación 15» (columna del jardín) y «Exterior 2/4» (restos del modelado).
+**Puntos de luz de techo:** 11 en total; 4 se domotizarán con los ZBMINIL2 (salón ×2, cocina, hab. Aroa). El resto quedan dibujados en el plano como referencia.
 
 ## Persianas
 
