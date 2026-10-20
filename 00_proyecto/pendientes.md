@@ -43,7 +43,7 @@ Hipótesis preliminares, a confirmar:
 ## Cambios aprobados, pendientes de ejecutar (tras el primer backup)
 
 - [ ] D-009 · Retirar integración Roborock
-- [ ] D-010 · Renombrar área «Zona gaming» → «Estudio»
+- [x] D-010 · Área «Estudio» (2026-10-20)
 
 ## Acciones previas a cualquier cambio (Fase 5, adelantables)
 
@@ -55,3 +55,9 @@ Hipótesis preliminares, a confirmar:
 ## Aplazado por decisión de Aida (2026-10-20)
 
 - [ ] **Copia externa en Google Drive** (D-029): aplazada para priorizar tener HA funcionando. Mientras tanto: backups automáticos **solo locales** + copia manual descargada al PC. ⚠️ Riesgo aceptado temporalmente: sin copia automática fuera de la Pi. Retomar antes de la Fase 8.
+
+## Hallazgos 2026-10-20 (registro de áreas)
+
+- Áreas existentes que no coinciden con `01_inventario/vivienda.md`: `sala` («Sala»), `dormitorio_darlings` («Dormitorio darlings»), `bano_habitacion` («Baño habitacion»). Faltan: `salon`, `habitacion_principal`, `bano_principal`, `cuarto_limpieza`, `jardin`, `terraza`. Pendiente de decisión de Aida.
+- Existe `automation.aviso_humedad_estudio` (no recogida en la auditoría inicial). Revisar en Fase 8.
+- 24 dispositivos sin área.
