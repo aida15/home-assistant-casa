@@ -8,7 +8,7 @@
 
 ## Convenciones del SVG
 
-- Estancias: `id="area-<area_id>"` (los mismos IDs de área de HA: `salon`, `cocina`, `habitacion_aroa`…).
+- Estancias: `id="area-<area_id>"` (los mismos IDs de área de HA: `sala`, `cocina`, `habitacion_aroa`…).
 - Luces domotizadas: `id="luz-<area_id>-<nombre>"`, grupo `<g class="luz">` con clase `on` / `no-disponible` según estado.
 - Puntos de luz sin domotizar: `id="punto-luz-<area_id>"` (solo referencia).
 - Puertas: `id="puerta-<area_a>-<area_b>"` y `puerta-principal`; ventanas: `id="ventana-<area_id>-<orientacion>"`. Clase `abierta` para cuando haya sensores.

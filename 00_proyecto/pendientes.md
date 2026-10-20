@@ -58,6 +58,8 @@ Hipótesis preliminares, a confirmar:
 
 ## Hallazgos 2026-10-20 (registro de áreas)
 
-- Áreas existentes que no coinciden con `01_inventario/vivienda.md`: `sala` («Sala»), `dormitorio_darlings` («Dormitorio darlings»), `bano_habitacion` («Baño habitacion»). Faltan: `salon`, `habitacion_principal`, `bano_principal`, `cuarto_limpieza`, `jardin`, `terraza`. Pendiente de decisión de Aida.
-- Existe `automation.aviso_humedad_estudio` (no recogida en la auditoría inicial). Revisar en Fase 8.
+- ~~Áreas no coincidentes~~ → resuelto con D-030.
+- Existen 4 automaciones `aviso_humedad_*` (sala, estudio, hab. Aroa, hab. darlings) que notifican a `notify.mobile_app_maida`; no estaban en la auditoría inicial. Revisar en Fase 8.
 - 24 dispositivos sin área.
+- Entidades no disponibles: `device_tracker.aida`, `aida_2`, `mike`, `poco_f7_ultra` (rastreadores antiguos/duplicados) y `media_player.sala`. Revisar en Fase 6.
+- Pendientes de F5-05: retirar **Roborock** (tiene aviso de reautenticación) y **UPnP**; activar **MFA** (aún desactivado).

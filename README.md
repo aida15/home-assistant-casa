@@ -41,6 +41,6 @@ Las carpetas se crean cuando tienen contenido real (no se generan vacías).
 
 ## Convenciones
 
-- Nombres de entidades y archivos en castellano, **sin tildes ni ñ** (`light.salon_techo`, `bano`).
+- Nombres de entidades y archivos en castellano, **sin tildes ni ñ** (`light.sala_techo`, `bano`).
 - Estados de cada elemento: `diseñado` → `implementado` → `probado` / `pendiente de prueba`.
 - Hechos verificados y **hipótesis (H)** siempre separados.
