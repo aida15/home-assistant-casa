@@ -50,7 +50,7 @@ Hipótesis preliminares, a confirmar:
 - [ ] Grabar capturas del «antes» (`09_contenido/capturas_pendientes.md`)
 - [x] Primer backup completo + copia fuera de la Pi (descarga al PC) + clave de cifrado custodiada (2026-10-20)
 - [x] Reserva DHCP para la Pi en el router (2026-10-19) · R-02 resuelto
-- [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible)
+- [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible) → con el MCP Server (D-007 capa 3), tras el túnel. Hoy el navegador pide aprobación por acción en direcciones privadas y no se puede ampliar
 
 ## Aplazado por decisión de Aida (2026-10-20)
 
@@ -67,5 +67,5 @@ Hipótesis preliminares, a confirmar:
 - ~~Usuarios~~ → resuelto con D-031.
 - **Hallazgo 2026-10-20 · presencia**: tras recargar tado, *todos* sus rastreadores (`mike`, `mvaida`) siguen como `restored` = la integración no les envía datos (H: la integración/cuota de tado ya no los alimenta). Propuesta: presencia con la app de HA en los dos móviles.
 - La app de HA «MAida» está en un Xiaomi 23078PND5G; el móvil actual de Aida es un POCO F7 Ultra → H: la app está en el móvil viejo. Confirmar.
-- ⚠️ La app registrada «MAida» es el **móvil viejo** (registro 2025-12-24, batería al 1 %, sin datos). Las 4 automatizaciones `aviso_humedad_*` notifican a `notify.mobile_app_maida` → **los avisos de humedad se están perdiendo**. Acción: iniciar sesión en la app del POCO (nuevo dispositivo), cambiar el destino de las 4 automatizaciones y borrar «MAida».
+- ✅ (resuelto 2026-10-20) La app registrada «MAida» era el **móvil viejo** (registro 2025-12-24, batería al 1 %, sin datos). Las 4 automatizaciones `aviso_humedad_*` notifican a `notify.mobile_app_maida` → **los avisos de humedad se están perdiendo**. Acción: iniciar sesión en la app del POCO (nuevo dispositivo), cambiar el destino de las 4 automatizaciones y borrar «MAida».
 - Persona «Mike» → renombrar a «Mikel» y vincular a su usuario cuando se cree.
