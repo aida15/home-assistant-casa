@@ -76,3 +76,12 @@ Hipótesis preliminares, a confirmar:
 - [ ] Ubicación: ni `mvaida` ni `iphone_de_mikel` han enviado aún coordenadas (sin `latitude`). Zona casa OK (radio 100 m). Revisar sensores de ubicación en las apps.
 - [x] Mikel: usuario y app (2026-10-20). Pendiente: confirmar notificación y que activa su MFA. ~~Mikel: activar inicio de sesión en la persona «Mike» (renombrar a Mikel) → usuario `mikel`, no admin. Lo hace Aida (Claude no crea cuentas ni contraseñas). Después: app en su iPhone, MFA propio, ubicación «Siempre»; Claude asigna su rastreador y quita `tado_mike`.~~
 - [ ] Tablet (D-032): requisitos anotados; la tablet no está operativa. Riesgo a vigilar: batería de una tablet de 2017 cargando 24/7 (posible hinchazón) → valorar ciclo de carga con enchufe inteligente.
+
+## Tuya (2026-10-20)
+
+- Causa de `unavailable`: **cambio de contraseña Wi-Fi** desde la configuración (dato de Aida). Acción: re-emparejar en Smart Life (2,4 GHz).
+- Destino acordado tras re-emparejar:
+  - Enchufe «Lampara salon» → lámpara de pie junto a la puerta de la terraza → área `sala`, mostrar como **luz** (`light.sala_lampara_pie`).
+  - Enchufe «Mike» → lámpara de la mesita de noche de Mikel → área `habitacion_darlings`, mostrar como **luz** (`light.habitacion_darlings_lampara_mikel`).
+  - Sensores de agua (lavadora y fregadero) → ambos en `cocina` (`binary_sensor.cocina_fuga_lavadora`, `binary_sensor.cocina_fuga_fregadero`). Aviso de fuga = prioridad crítica (D-008), en Fase 8.
+- 3.er enchufe sin configurar: se añadirá cuando tenga uso.
