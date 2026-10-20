@@ -91,6 +91,6 @@ Hipótesis preliminares, a confirmar:
 ## Fase 7 (2026-10-20)
 - [x] (2026-10-20, datos de Aida) ~~Confirmar en la app de tado qué válvula (HomeKit `VA…`/`RU…`) está en cada habitación. Hipótesis por temperaturas: RU4020065024 sala (termostato) · VA2873572352 sala (válvula) · VA3376888832 hab. darlings · VA2252618752 estudio · VA1497840640 hab. Aroa. Después: clima del panel con HomeKit (local) en lugar de la nube.~~ Pendiente: configurar el 4.º cabezal en la sala y confirmar que es `cabezal_4` (VA2873572352).
 - [ ] Posiciones en el plano de TV, tira LED y lámpara de Mikel: aproximadas, a confirmar por Aida.
-- [ ] Flujo Git (D-021) → tema terracota + modo noche (D-011, D-012) → panel a YAML.
+- [x] Flujo Git (D-021) + tema terracota + modo noche (2026-10-20). Pendiente: panel a YAML; plano en versión noche; quitar escritura a la deploy key.
 - [ ] Tablet: panel predeterminado `/panel-casa`, modo quiosco (D-032).
 - [x] Avisos de humedad corregidos (2026-10-20). Pendiente decidir si se unifica el umbral (40 % vs 50 %).

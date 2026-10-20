@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **En curso** |
+| Estado | **Implementado y probado** (2026-10-20) |
 | Objetivo | `/config` versionado en `aida15/home-assistant-config`; Claude escribe YAML en GitHub y HA lo recibe con la app Git pull |
 | Riesgo | Bajo en el arranque (solo `git init` y `push`). **Alto si se instala Git pull antes de que el repo contenga la config**: la app vacía `/config` y solo restaura archivos no YAML |
 
@@ -28,3 +28,10 @@ Borrar `/config/.git` y `/config/.gitignore`; borrar la deploy key en GitHub; de
 
 ## Incidencia 2026-10-20
 Al redactar esta ficha, un heredoc anidado ejecutó por error `git init/config/commit` en el **repo de documentación del sandbox de Claude** (no en HA). Detectado al momento: commit local deshecho, identidad restaurada, nada se subió. 🎓 Lección: no anidar heredocs con el mismo delimitador.
+
+## Resultado real (2026-10-20)
+- Clave de despliegue ed25519 «HA Pi» en `home-assistant-config` (con escritura; **pendiente** quitar la escritura).
+- 1.er intento fallido: la clave se añadió por error al repo de documentación → movida.
+- Primer commit desde HA: `.gitignore` lista blanca, `configuration.yaml`, `automations.yaml`, `scripts.yaml`, `scenes.yaml`, 3 blueprints de serie. Sin secretos.
+- Claude sube tema y paquete; app **Git pull** (pull, `main`, sin reinicio automático, sondeo cada 300 s) los descarga; comprobación de configuración **válida**; reinicio lanzado por Claude.
+- Tras reiniciar: temas «Casa día» y «Casa noche» cargados; tema por defecto «Casa noche» (sol bajo el horizonte) → la automatización funciona; Reparaciones sin avisos. Fuente Figtree añadida como recurso CSS (Google Fonts).
