@@ -1,0 +1,18 @@
+# Lista blanca: se ignora todo salvo lo indicado
+/*
+!/.gitignore
+!/configuration.yaml
+!/automations.yaml
+!/scripts.yaml
+!/scenes.yaml
+!/customize.yaml
+!/packages/
+!/themes/
+!/dashboards/
+!/blueprints/
+# Nunca
+secrets.yaml
+.storage/
+.ssh/
+*.db*
+*.log*
