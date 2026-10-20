@@ -1,0 +1,226 @@
+# Dashboard «Casa» v1 · URL /panel-casa (modo storage, publicado por Claude vía navegador 2026-10-20)
+# __PLANO__ = data URI de 04_dashboards/v1/plano_dashboard.svg
+title: Casa
+views:
+- title: Inicio
+  path: inicio
+  icon: mdi:home
+  type: sections
+  max_columns: 3
+  badges:
+  - type: entity
+    entity: person.aida
+  - type: entity
+    entity: person.mikel
+  - type: entity
+    entity: sensor.tado_casa_temperatura_exterior
+    name: Fuera
+  sections:
+  - type: grid
+    column_span: 2
+    cards:
+    - type: heading
+      heading: Casa
+      icon: mdi:floor-plan
+    - type: picture-elements
+      image: __PLANO__
+      elements:
+      - type: state-icon
+        entity: light.sala_lampara_pie
+        tap_action:
+          action: toggle
+        style:
+          left: 62.8%
+          top: 42.0%
+          --mdc-icon-size: 34px
+          background: rgba(255,255,255,.85)
+          border-radius: 50%
+          padding: 4px
+      - type: state-icon
+        entity: light.sala_tira_led
+        tap_action:
+          action: toggle
+        style:
+          left: 54.7%
+          top: 28.0%
+          --mdc-icon-size: 34px
+          background: rgba(255,255,255,.85)
+          border-radius: 50%
+          padding: 4px
+      - type: state-icon
+        entity: media_player.sala_tv
+        tap_action:
+          action: more-info
+        style:
+          left: 47.7%
+          top: 28.0%
+          --mdc-icon-size: 34px
+          background: rgba(255,255,255,.85)
+          border-radius: 50%
+          padding: 4px
+      - type: state-icon
+        entity: light.habitacion_darlings_lampara_mikel
+        tap_action:
+          action: toggle
+        style:
+          left: 8.1%
+          top: 74.0%
+          --mdc-icon-size: 34px
+          background: rgba(255,255,255,.85)
+          border-radius: 50%
+          padding: 4px
+      - type: state-label
+        entity: sensor.sala_temperatura
+        tap_action:
+          action: more-info
+        style:
+          left: 54.7%
+          top: 51.0%
+          font-size: 15px
+          font-weight: '600'
+          color: '#221E1A'
+      - type: state-label
+        entity: sensor.estudio_temperatura
+        tap_action:
+          action: more-info
+        style:
+          left: 43.3%
+          top: 80.0%
+          font-size: 15px
+          font-weight: '600'
+          color: '#221E1A'
+      - type: state-label
+        entity: sensor.habitacion_aroa_temperatura
+        tap_action:
+          action: more-info
+        style:
+          left: 65.8%
+          top: 80.0%
+          font-size: 15px
+          font-weight: '600'
+          color: '#221E1A'
+      - type: state-label
+        entity: sensor.habitacion_darlings_temperatura
+        tap_action:
+          action: more-info
+        style:
+          left: 19.8%
+          top: 80.0%
+          font-size: 15px
+          font-weight: '600'
+          color: '#221E1A'
+  - type: grid
+    cards:
+    - type: heading
+      heading: Luces
+      icon: mdi:lightbulb-group
+    - type: tile
+      entity: light.sala_lampara_pie
+      name: Lámpara de pie
+      icon_tap_action:
+        action: toggle
+    - type: tile
+      entity: light.sala_tira_led
+      name: Tira LED TV
+      icon_tap_action:
+        action: toggle
+    - type: tile
+      entity: light.habitacion_darlings_lampara_mikel
+      name: Mesita Mikel
+      icon_tap_action:
+        action: toggle
+    - type: heading
+      heading: Sala
+      icon: mdi:sofa
+    - type: media-control
+      entity: media_player.sala_tv
+    - type: heading
+      heading: Clima
+      icon: mdi:thermometer
+    - type: tile
+      entity: climate.sala_tado
+      name: Sala
+      features:
+      - type: target-temperature
+      features_position: bottom
+    - type: tile
+      entity: climate.habitacion_darlings_tado
+      name: Hab. darlings
+      features:
+      - type: target-temperature
+      features_position: bottom
+    - type: tile
+      entity: climate.estudio_tado
+      name: Estudio
+      features:
+      - type: target-temperature
+      features_position: bottom
+    - type: tile
+      entity: climate.habitacion_aroa_tado
+      name: Hab. Aroa
+      features:
+      - type: target-temperature
+      features_position: bottom
+    - type: weather-forecast
+      entity: weather.forecast_casa
+      forecast_type: daily
+      show_forecast: true
+- title: Sistema
+  path: sistema
+  icon: mdi:cog-outline
+  type: sections
+  max_columns: 3
+  sections:
+  - type: grid
+    cards:
+    - type: heading
+      heading: Corriente sala
+      icon: mdi:power-socket-eu
+    - type: tile
+      entity: switch.sala_tv_corriente
+      name: TV
+      tap_action:
+        action: toggle
+        confirmation:
+          text: ¿Cortar/dar corriente a la TV?
+    - type: tile
+      entity: switch.sala_sofa
+      name: Sofá
+      tap_action:
+        action: toggle
+        confirmation:
+          text: ¿Cortar/dar corriente al sofá?
+    - type: tile
+      entity: switch.sala_camara
+      name: Cámara
+      tap_action:
+        action: toggle
+        confirmation:
+          text: ¿Seguro? La cámara se quedará sin corriente.
+    - type: tile
+      entity: switch.sala_altavoz
+      name: Altavoz
+      tap_action:
+        action: toggle
+        confirmation:
+          text: ¿Seguro? El altavoz se quedará sin corriente.
+  - type: grid
+    cards:
+    - type: heading
+      heading: Consumo
+      icon: mdi:flash
+    - type: tile
+      entity: sensor.sala_regleta_1_potencia
+      name: Regleta 1
+    - type: tile
+      entity: sensor.sala_regleta_2_potencia
+      name: Regleta 2
+  - type: grid
+    cards:
+    - type: heading
+      heading: Personas
+      icon: mdi:account-multiple
+    - type: tile
+      entity: person.aida
+    - type: tile
+      entity: person.mikel

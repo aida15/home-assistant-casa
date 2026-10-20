@@ -87,3 +87,10 @@ Hipótesis preliminares, a confirmar:
 - 3.er enchufe sin configurar: se añadirá cuando tenga uso.
 - [ ] Tablet: crear usuario `tablet` (Aida), volver a iniciar sesión en la tablet con él y borrar el registro hecho con la cuenta de habitante.
 - [ ] Midea (deshumidificador): no está en Smart Life/Tuya; integración comunitaria → esperar al Marketplace de HA 2026.11 (D-023).
+
+## Fase 7 (2026-10-20)
+- [ ] Confirmar en la app de tado qué válvula (HomeKit `VA…`/`RU…`) está en cada habitación. Hipótesis por temperaturas: RU4020065024 sala (termostato) · VA2873572352 sala (válvula) · VA3376888832 hab. darlings · VA2252618752 estudio · VA1497840640 hab. Aroa. Después: clima del panel con HomeKit (local) en lugar de la nube.
+- [ ] Posiciones en el plano de TV, tira LED y lámpara de Mikel: aproximadas, a confirmar por Aida.
+- [ ] Flujo Git (D-021) → tema terracota + modo noche (D-011, D-012) → panel a YAML.
+- [ ] Tablet: panel predeterminado `/panel-casa`, modo quiosco (D-032).
+- [ ] Fase 8: revisar automatizaciones de humedad (darlings con umbral 20 %; el título dice «ENCENDER HUMIDIFICADOR» cuando la humedad es alta).
