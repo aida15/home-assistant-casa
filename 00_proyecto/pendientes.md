@@ -91,7 +91,7 @@ Hipótesis preliminares, a confirmar:
 ## Fase 7 (2026-10-20)
 - [x] (2026-10-20, datos de Aida) ~~Confirmar en la app de tado qué válvula (HomeKit `VA…`/`RU…`) está en cada habitación. Hipótesis por temperaturas: RU4020065024 sala (termostato) · VA2873572352 sala (válvula) · VA3376888832 hab. darlings · VA2252618752 estudio · VA1497840640 hab. Aroa. Después: clima del panel con HomeKit (local) en lugar de la nube.~~ Pendiente: configurar el 4.º cabezal en la sala y confirmar que es `cabezal_4` (VA2873572352).
 - [ ] Posiciones en el plano de TV, tira LED y lámpara de Mikel: aproximadas, a confirmar por Aida.
-- [x] Flujo Git (D-021) + tema terracota + modo noche (2026-10-20). Pendiente: panel a YAML; plano en versión noche; quitar escritura a la deploy key.
+- [x] Flujo Git (D-021) + tema terracota + modo noche (2026-10-20). ~~panel a YAML; plano noche~~ (hechos). Pendiente: quitar escritura a la deploy key; tarjeta de TV (la media-control se ve gris con el tema oscuro).
 - [ ] Tablet: panel predeterminado `/panel-casa`, modo quiosco (D-032).
 - [x] Avisos de humedad corregidos (2026-10-20). Pendiente decidir si se unifica el umbral (40 % vs 50 %).
 - [ ] Tablet: aviso «La autoridad de certificación no es de confianza» al abrir la app (no bloquea). El frontend no carga nada externo (comprobado en `/panel-casa` y `/home`). H: la app intenta una URL `https://` guardada en su configuración. **Aparcado por Aida (2026-10-20)**; revisar con el modo quiosco.
