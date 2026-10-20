@@ -69,3 +69,10 @@ Hipótesis preliminares, a confirmar:
 - La app de HA «MAida» está en un Xiaomi 23078PND5G; el móvil actual de Aida es un POCO F7 Ultra → H: la app está en el móvil viejo. Confirmar.
 - ✅ (resuelto 2026-10-20) La app registrada «MAida» era el **móvil viejo** (registro 2025-12-24, batería al 1 %, sin datos). Las 4 automatizaciones `aviso_humedad_*` notifican a `notify.mobile_app_maida` → **los avisos de humedad se están perdiendo**. Acción: iniciar sesión en la app del POCO (nuevo dispositivo), cambiar el destino de las 4 automatizaciones y borrar «MAida».
 - Persona «Mike» → renombrar a «Mikel» y vincular a su usuario cuando se cree.
+
+## Usuarios y presencia (2026-10-20)
+
+- [x] Notificación de prueba recibida en `mvaida`.
+- [ ] Ubicación de `mvaida`: el rastreador recibe actualizaciones pero aún sin coordenadas (`unknown`). Revisar batería sin restricciones / inicio automático en HyperOS.
+- [ ] Mikel: activar inicio de sesión en la persona «Mike» (renombrar a Mikel) → usuario `mikel`, no admin. Lo hace Aida (Claude no crea cuentas ni contraseñas). Después: app en su iPhone, MFA propio, ubicación «Siempre»; Claude asigna su rastreador y quita `tado_mike`.
+- [ ] Tablet (D-032): requisitos anotados; la tablet no está operativa. Riesgo a vigilar: batería de una tablet de 2017 cargando 24/7 (posible hinchazón) → valorar ciclo de carga con enchufe inteligente.
