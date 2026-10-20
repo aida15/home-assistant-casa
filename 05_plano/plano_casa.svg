@@ -81,7 +81,7 @@
   <text class="rotulo" x="230" y="180">Limpieza</text>
   <text class="rotulo" x="230" y="275">Cocina</text>
   <text class="rotulo" x="236" y="522">Entrada</text>
-  <text class="rotulo activa" x="374" y="254">Salón</text>
+  <text class="rotulo activa" x="374" y="254">Sala</text>
   <text class="rotulo" x="374" y="602" style="font-size: 16px">Pasillo</text>
   <text class="rotulo" x="580" y="496" style="font-size: 16px">Baño</text>
   <text class="rotulo" x="580" y="515" style="font-size: 16px">Aroa</text>
