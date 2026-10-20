@@ -64,6 +64,8 @@ Hipótesis preliminares, a confirmar:
 - Entidades no disponibles: `device_tracker.aida`, `aida_2`, `mike`, `poco_f7_ultra` (rastreadores antiguos/duplicados) → en análisis con Aida. `media_player.sala` (Nest Mini): **depende de un enchufe inteligente**; si está apagado, el altavoz no está disponible (comportamiento esperado, ver R-03).
 - Pendiente de F5-05: activar **MFA** (aún desactivado). Roborock y UPnP retirados.
 - Personas en HA: `person.villarusategi` (rastreador: app móvil MAida), `person.aida` (rastreador tado `aida`), `person.mike` (rastreador tado `mike`). Rastreadores tado extra: `aida_2`, `poco_f7_ultra`. Solo hay 2 móviles reales (uno por persona). Reorganizar en Fase 6.
-- **Hallazgo 2026-10-20 · usuarios**: la única cuenta de HA es `villarusategi` (admin), vinculada a `person.villarusategi`. D-022 preveía `aida`. Pendiente de decisión de Aida.
+- ~~Usuarios~~ → resuelto con D-031.
 - **Hallazgo 2026-10-20 · presencia**: tras recargar tado, *todos* sus rastreadores (`mike`, `mvaida`) siguen como `restored` = la integración no les envía datos (H: la integración/cuota de tado ya no los alimenta). Propuesta: presencia con la app de HA en los dos móviles.
 - La app de HA «MAida» está en un Xiaomi 23078PND5G; el móvil actual de Aida es un POCO F7 Ultra → H: la app está en el móvil viejo. Confirmar.
+- ⚠️ La app registrada «MAida» es el **móvil viejo** (registro 2025-12-24, batería al 1 %, sin datos). Las 4 automatizaciones `aviso_humedad_*` notifican a `notify.mobile_app_maida` → **los avisos de humedad se están perdiendo**. Acción: iniciar sesión en la app del POCO (nuevo dispositivo), cambiar el destino de las 4 automatizaciones y borrar «MAida».
+- Persona «Mike» → renombrar a «Mikel» y vincular a su usuario cuando se cree.
