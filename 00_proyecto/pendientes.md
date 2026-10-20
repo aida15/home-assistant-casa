@@ -19,7 +19,7 @@
 ## Fase 2 · Auditoría
 
 - [x] Auditoría redactada (`02_arquitectura/auditoria_fase2.md`)
-- [ ] Prueba del frontend de HA en la tablet Huawei (R-10) — 1.er intento: la app se queda en «buscando en la red doméstica» → probar con IP manual
+- [x] Prueba del frontend de HA en la tablet Huawei (R-10): **la app funciona** en Android 7 (2026-10-20)
 - [x] Validación de la auditoría por Aida → **Fase 2 cerrada (2026-10-19)**
 
 ## Fechas clave
@@ -85,3 +85,5 @@ Hipótesis preliminares, a confirmar:
   - Enchufe «Mike» → lámpara de la mesita de noche de Mikel → área `habitacion_darlings`, mostrar como **luz** (`light.habitacion_darlings_lampara_mikel`).
   - Sensores de agua (lavadora y fregadero) → ambos en `cocina` (`binary_sensor.cocina_fuga_lavadora`, `binary_sensor.cocina_fuga_fregadero`). Aviso de fuga = prioridad crítica (D-008), en Fase 8.
 - 3.er enchufe sin configurar: se añadirá cuando tenga uso.
+- [ ] Tablet: crear usuario `tablet` (Aida), volver a iniciar sesión en la tablet con él y borrar el registro hecho con la cuenta de habitante.
+- [ ] Midea (deshumidificador): no está en Smart Life/Tuya; integración comunitaria → esperar al Marketplace de HA 2026.11 (D-023).
