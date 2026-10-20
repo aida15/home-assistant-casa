@@ -21,5 +21,14 @@ Convención: `<dominio>.<area>_<elemento>`, sin tildes ni ñ (D-004, D-030). Los
 
 Pendientes de re-emparejar: sensores de agua (cocina), regleta de la cocina, 3.er enchufe, deshumidificador (no llega a HA).
 
+## LG webOS
+
+| Dispositivo | Área | Entidad | Qué controla |
+|---|---|---|---|
+| TV sala (50UK6470PLC) | sala | `media_player.sala_tv` | Encender/apagar, volumen, fuentes y apps |
+| | | `switch.sala_tv_pantalla` | Apagar solo la pantalla |
+
+Encender la TV desde HA requiere *Wake on LAN* + automatización (Fase 8). Pendiente: reserva DHCP de la TV en el router.
+
 ## Notas
 - Las regletas **no exponen** el «estado al encender» en HA ni Aida lo encuentra en la app (H: el firmware no lo ofrece). Mitigación en Fase 8: automatización que, si la regleta vuelve tras un corte, enciende **cámara** y **altavoz**.
