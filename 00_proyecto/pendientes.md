@@ -48,7 +48,7 @@ Hipótesis preliminares, a confirmar:
 ## Acciones previas a cualquier cambio (Fase 5, adelantables)
 
 - [ ] Grabar capturas del «antes» (`09_contenido/capturas_pendientes.md`)
-- [ ] Primer backup completo + copia fuera de la Pi + clave de cifrado custodiada
+- [x] Primer backup completo + copia fuera de la Pi (descarga al PC) + clave de cifrado custodiada (2026-10-20)
 - [x] Reserva DHCP para la Pi en el router (2026-10-19) · R-02 resuelto
 - [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible)
 
