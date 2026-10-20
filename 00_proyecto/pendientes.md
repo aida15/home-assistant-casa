@@ -51,3 +51,7 @@ Hipótesis preliminares, a confirmar:
 - [ ] Primer backup completo + copia fuera de la Pi + clave de cifrado custodiada
 - [x] Reserva DHCP para la Pi en el router (2026-10-19) · R-02 resuelto
 - [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible)
+
+## Aplazado por decisión de Aida (2026-10-20)
+
+- [ ] **Copia externa en Google Drive** (D-029): aplazada para priorizar tener HA funcionando. Mientras tanto: backups automáticos **solo locales** + copia manual descargada al PC. ⚠️ Riesgo aceptado temporalmente: sin copia automática fuera de la Pi. Retomar antes de la Fase 8.

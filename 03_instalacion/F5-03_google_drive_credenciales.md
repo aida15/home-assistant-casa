@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Fase | 5 · Preparación |
-| Estado | **Diseñado** → pendiente de ejecutar por Aida |
+| Estado | **Aplazado** (2026-10-20) · pendiente de verificación de marca (D-029) |
 | Objetivo | Tener Client ID y Client Secret OAuth para la integración **Google Drive** de HA (D-016, D-017) |
 | Problema que resuelve | Hoy el único backup está en la propia microSD: si la tarjeta muere, se pierde todo |
 | Requisitos | Cuenta de Google **dedicada** (D-016) · KeePass abierto |
