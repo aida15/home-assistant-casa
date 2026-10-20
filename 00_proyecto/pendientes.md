@@ -94,3 +94,5 @@ Hipótesis preliminares, a confirmar:
 - [x] Flujo Git (D-021) + tema terracota + modo noche (2026-10-20). Pendiente: panel a YAML; plano en versión noche; quitar escritura a la deploy key.
 - [ ] Tablet: panel predeterminado `/panel-casa`, modo quiosco (D-032).
 - [x] Avisos de humedad corregidos (2026-10-20). Pendiente decidir si se unifica el umbral (40 % vs 50 %).
+- [ ] Tablet: aviso «La autoridad de certificación no es de confianza» al abrir la app (no bloquea). El frontend no carga nada externo (comprobado en `/panel-casa` y `/home`). H: la app intenta una URL `https://` guardada en su configuración. **Aparcado por Aida (2026-10-20)**; revisar con el modo quiosco.
+- [x] Móviles: «Conexión insegura bloqueada» resuelto añadiendo la Wi-Fi de casa en la app (2026-10-20).
