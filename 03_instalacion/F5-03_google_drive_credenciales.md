@@ -52,3 +52,19 @@ Borrar el cliente OAuth o el proyecto en Google Cloud. HA no se ve afectado.
 
 ## Resultado real
 _(pendiente)_
+
+## Incidencia 2026-10-20 · Google exige logo → verificación de marca
+
+- La consola no deja publicar sin logo; con logo pide **verificación de marca**: página principal y política de privacidad accesibles, en un dominio **verificado a nombre de la cuenta**.
+- `home-assistant.io` no sirve (no es nuestro). Errores recibidos: página no accesible / no registrada a tu nombre / política sin contenido suficiente.
+- Decisión D-029: mantener Google Drive y verificar la marca con el **dominio propio** (descartados OneDrive y modo Testing).
+
+### Procedimiento B (sustituye a los enlaces del paso B.3)
+1. **Web mínima** en la raíz del dominio con `web_google/` (index + privacidad + logo). Sustituir `CORREO_CONTACTO` por el correo de la cuenta dedicada antes de subir. Alojamiento: Cloudflare Pages (subida directa), dominio personalizado = raíz del dominio.
+2. **Search Console** (con la cuenta dedicada) → propiedad de tipo *Dominio* → registro TXT en el DNS de Cloudflare → Verificar.
+3. **Branding**: logo, página principal `https://<dominio>/`, privacidad `https://<dominio>/privacidad.html`, dominio autorizado `<dominio>`.
+4. Esperar 24 h tras verificar el dominio → **Publicar** → enviar a verificación.
+5. **Mientras Google revisa**: app en Testing con la cuenta dedicada como *test user* para tener backups ya; reautorizar en HA cada 7 días hasta la aprobación.
+
+### Riesgo asumido
+La web pública asocia el dominio a «un sistema domótico». Mitigación: el subdominio del túnel no se publica en la web, MFA, geobloqueo e `ip_ban` (D-020).
