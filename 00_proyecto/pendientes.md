@@ -73,6 +73,6 @@ Hipótesis preliminares, a confirmar:
 ## Usuarios y presencia (2026-10-20)
 
 - [x] Notificación de prueba recibida en `mvaida`.
-- [ ] Ubicación de `mvaida`: el rastreador recibe actualizaciones pero aún sin coordenadas (`unknown`). Revisar batería sin restricciones / inicio automático en HyperOS.
-- [ ] Mikel: activar inicio de sesión en la persona «Mike» (renombrar a Mikel) → usuario `mikel`, no admin. Lo hace Aida (Claude no crea cuentas ni contraseñas). Después: app en su iPhone, MFA propio, ubicación «Siempre»; Claude asigna su rastreador y quita `tado_mike`.
+- [ ] Ubicación: ni `mvaida` ni `iphone_de_mikel` han enviado aún coordenadas (sin `latitude`). Zona casa OK (radio 100 m). Revisar sensores de ubicación en las apps.
+- [x] Mikel: usuario y app (2026-10-20). Pendiente: confirmar notificación y que activa su MFA. ~~Mikel: activar inicio de sesión en la persona «Mike» (renombrar a Mikel) → usuario `mikel`, no admin. Lo hace Aida (Claude no crea cuentas ni contraseñas). Después: app en su iPhone, MFA propio, ubicación «Siempre»; Claude asigna su rastreador y quita `tado_mike`.~~
 - [ ] Tablet (D-032): requisitos anotados; la tablet no está operativa. Riesgo a vigilar: batería de una tablet de 2017 cargando 24/7 (posible hinchazón) → valorar ciclo de carga con enchufe inteligente.
