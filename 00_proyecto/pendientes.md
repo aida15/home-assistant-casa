@@ -42,7 +42,7 @@ Hipótesis preliminares, a confirmar:
 
 ## Cambios aprobados, pendientes de ejecutar (tras el primer backup)
 
-- [ ] D-009 · Retirar integración Roborock
+- [x] D-009 · Retirar integración Roborock (2026-10-20)
 - [x] D-010 · Área «Estudio» (2026-10-20)
 
 ## Acciones previas a cualquier cambio (Fase 5, adelantables)
@@ -61,5 +61,6 @@ Hipótesis preliminares, a confirmar:
 - ~~Áreas no coincidentes~~ → resuelto con D-030.
 - Existen 4 automaciones `aviso_humedad_*` (sala, estudio, hab. Aroa, hab. darlings) que notifican a `notify.mobile_app_maida`; no estaban en la auditoría inicial. Revisar en Fase 8.
 - 24 dispositivos sin área.
-- Entidades no disponibles: `device_tracker.aida`, `aida_2`, `mike`, `poco_f7_ultra` (rastreadores antiguos/duplicados) y `media_player.sala`. Revisar en Fase 6.
-- Pendientes de F5-05: retirar **Roborock** (tiene aviso de reautenticación) y **UPnP**; activar **MFA** (aún desactivado).
+- Entidades no disponibles: `device_tracker.aida`, `aida_2`, `mike`, `poco_f7_ultra` (rastreadores antiguos/duplicados) → en análisis con Aida. `media_player.sala` (Nest Mini): **depende de un enchufe inteligente**; si está apagado, el altavoz no está disponible (comportamiento esperado, ver R-03).
+- Pendiente de F5-05: activar **MFA** (aún desactivado). Roborock y UPnP retirados.
+- Personas en HA: `person.villarusategi` (rastreador: app móvil MAida), `person.aida` (rastreador tado `aida`), `person.mike` (rastreador tado `mike`). Rastreadores tado extra: `aida_2`, `poco_f7_ultra`. Solo hay 2 móviles reales (uno por persona). Reorganizar en Fase 6.
