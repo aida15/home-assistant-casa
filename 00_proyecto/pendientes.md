@@ -103,7 +103,7 @@ Hipótesis preliminares, a confirmar:
 - [ ] ⚠️ **R-15 · Carga de la regleta de la cocina**: lavadora + freidora de aire + cafetera en una misma regleta. Comprobar la potencia máxima de la regleta (etiqueta) frente a la suma de los tres; no cortar la lavadora en marcha desde HA.
 
 ## Rutinas (2026-10-21)
-- [ ] MAC de la TV en `input_text.tv_sala_mac` (Aida) → probar «Encender TV», «Cenar», «Cine».
+- [x] MAC de la TV y encendido por red probado (2026-10-21). Pendiente: Aida prueba «Cenar» y «Cine» completos.
 - [ ] Probar en real: volumen 20:00, volumen 7:30/9:00, despertar 6:45.
 - [ ] Cuando funcionen en HA: **desactivar las rutinas equivalentes en Google Home** (si no, se ejecutan dos veces).
 - [ ] Voz: decidir sustituto de «Ok Google, vamos a cenar» (D-036).
