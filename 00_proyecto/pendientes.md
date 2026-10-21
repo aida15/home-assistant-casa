@@ -111,3 +111,10 @@ Hipótesis preliminares, a confirmar:
 - [ ] Propuesta de seguridad: apagado automático de la cafetera a las X h (pendiente de decisión).
 - [ ] Probar el modo Vacaciones una noche real (o adelantando las ventanas) antes del primer viaje.
 - [ ] Vacaciones · futuro: luces de techo (ZBMINIL2) y persianas (bajar de noche / subir por la mañana a hora aleatoria).
+
+## Calefacción y presencia (2026-10-21)
+- [ ] Ver que a las 16:00 vuelve la programación de tado.
+- [ ] Probar modo Fuera (20 ºC) y Vacaciones (17 ºC).
+- [ ] Cámara de la entrada: no tiene enchufe controlable → confirmar cómo se alimenta.
+- [ ] Desactivar en la app tado su geolocalización si choca con el modo Fuera de HA.
+- [ ] ⚠️ Marzo 2027: sin Auto-Assist la nube de tado baja a 100 llamadas/día; revisar consumo de estas rutinas.
