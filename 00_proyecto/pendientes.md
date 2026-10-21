@@ -98,7 +98,7 @@ Hipótesis preliminares, a confirmar:
 - [x] Móviles: «Conexión insegura bloqueada» resuelto añadiendo la Wi-Fi de casa en la app (2026-10-20).
 
 ## To-do (2026-10-21)
-- [ ] **Ring Intercom** (portero): instalar y configurar en la app Ring; después integración oficial (nube, 2FA). Reglas propuestas: abrir siempre con confirmación, nunca por automatización ni voz; decidir si se integra la apertura (HA no permite restringir entidades por usuario).
+- [x] **Ring Intercom** integrado (2026-10-21). Pendiente: Reglas propuestas: abrir siempre con confirmación, nunca por automatización ni voz; decidir si se integra la apertura (HA no permite restringir entidades por usuario).
 - [ ] **V2C Trydan** (garaje): integración oficial local por IP. **Bloqueado: sin cobertura Wi-Fi en el garaje.** Opciones: punto de acceso/mesh en el garaje o cable (si el cargador lo admite; verificar modelo).
 - [ ] ⚠️ **R-15 · Carga de la regleta de la cocina**: lavadora + freidora de aire + cafetera en una misma regleta. Comprobar la potencia máxima de la regleta (etiqueta) frente a la suma de los tres; no cortar la lavadora en marcha desde HA.
 
@@ -118,3 +118,8 @@ Hipótesis preliminares, a confirmar:
 - [ ] Cámara de la entrada: no tiene enchufe controlable → confirmar cómo se alimenta.
 - [ ] Desactivar en la app tado su geolocalización si choca con el modo Fuera de HA.
 - [ ] ⚠️ Marzo 2027: sin Auto-Assist la nube de tado baja a 100 llamadas/día; revisar consumo de estas rutinas.
+
+## Backlog del panel de la tablet
+- [ ] Chip de persona: **círculo verde** cuando está en casa (ahora terracota); vacío cuando está fuera (como ahora). Pedido por Aida 2026-10-21, «para un cambio en el futuro».
+- [ ] Revisar con Aida la 3.ª fila del mosaico (Tira LED, Mesita Mikel, Cafetera = elección provisional de Claude).
+- [ ] Portero en el panel (aviso de «llaman» y, si se decide, botón de abrir con confirmación).
