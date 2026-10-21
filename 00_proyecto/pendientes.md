@@ -96,3 +96,8 @@ Hipótesis preliminares, a confirmar:
 - [x] Avisos de humedad corregidos (2026-10-20). Pendiente decidir si se unifica el umbral (40 % vs 50 %).
 - [ ] Tablet: aviso «La autoridad de certificación no es de confianza» al abrir la app (no bloquea). El frontend no carga nada externo (comprobado en `/panel-casa` y `/home`). H: la app intenta una URL `https://` guardada en su configuración. **Aparcado por Aida (2026-10-20)**; revisar con el modo quiosco.
 - [x] Móviles: «Conexión insegura bloqueada» resuelto añadiendo la Wi-Fi de casa en la app (2026-10-20).
+
+## To-do (2026-10-21)
+- [ ] **Ring Intercom** (portero): instalar y configurar en la app Ring; después integración oficial (nube, 2FA). Reglas propuestas: abrir siempre con confirmación, nunca por automatización ni voz; decidir si se integra la apertura (HA no permite restringir entidades por usuario).
+- [ ] **V2C Trydan** (garaje): integración oficial local por IP. **Bloqueado: sin cobertura Wi-Fi en el garaje.** Opciones: punto de acceso/mesh en el garaje o cable (si el cargador lo admite; verificar modelo).
+- [ ] ⚠️ **R-15 · Carga de la regleta de la cocina**: lavadora + freidora de aire + cafetera en una misma regleta. Comprobar la potencia máxima de la regleta (etiqueta) frente a la suma de los tres; no cortar la lavadora en marcha desde HA.

@@ -19,7 +19,13 @@ Convención: `<dominio>.<area>_<elemento>`, sin tildes ni ñ (D-004, D-030). Los
 | | | `light.sala_tira_led` | USB · tira LED bajo el mueble de la TV |
 | | | `sensor.sala_regleta_2_{potencia,intensidad,tension,energia}` | Consumo |
 
-Pendientes de re-emparejar: sensores de agua (cocina), regleta de la cocina, 3.er enchufe, deshumidificador (no llega a HA).
+| r cocina · Regleta cocina | cocina | `switch.cocina_lavadora` | Toma 1 · lavadora ⚠️ no cortar en marcha |
+| | | `switch.cocina_cafetera` | Toma 2 · cafetera |
+| | | `switch.cocina_freidora_aire` | Toma 3 · freidora de aire |
+| | | `switch.cocina_regleta_usb` | USB · libre |
+| | | `sensor.cocina_regleta_{potencia,intensidad,tension,energia}` | Consumo |
+
+Pendientes de re-emparejar: sensores de agua (cocina), 3.er enchufe. Deshumidificador Midea: Marketplace 2026.11.
 
 ## LG webOS
 
