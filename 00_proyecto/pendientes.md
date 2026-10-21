@@ -123,3 +123,5 @@ Hipótesis preliminares, a confirmar:
 - [ ] Chip de persona: **círculo verde** cuando está en casa (ahora terracota); vacío cuando está fuera (como ahora). Pedido por Aida 2026-10-21, «para un cambio en el futuro».
 - [ ] Revisar con Aida la 3.ª fila del mosaico (Tira LED, Mesita Mikel, Cafetera = elección provisional de Claude).
 - [ ] Portero en el panel (aviso de «llaman» y, si se decide, botón de abrir con confirmación).
+- [ ] Probar el portero con un timbrazo real (aviso en móviles + ventana en la tablet + abrir).
+- [ ] **Cámaras en Sistema (tablet)**: vista previa de las 2 cámaras pedida por Aida. Bloqueado: las Nest no están en HA (Nest requiere proyecto Google + verificación, igual que Drive). Opciones a decidir: integrar Nest tras la verificación de Google, o cambiar a cámaras locales.
