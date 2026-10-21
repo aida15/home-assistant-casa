@@ -109,3 +109,5 @@ Hipótesis preliminares, a confirmar:
 - [ ] Voz: decidir sustituto de «Ok Google, vamos a cenar» (D-036).
 - [ ] Festivos: las rutinas de días laborables no distinguen festivos (opción: integración Workday).
 - [ ] Propuesta de seguridad: apagado automático de la cafetera a las X h (pendiente de decisión).
+- [ ] Probar el modo Vacaciones una noche real (o adelantando las ventanas) antes del primer viaje.
+- [ ] Vacaciones · futuro: luces de techo (ZBMINIL2) y persianas (bajar de noche / subir por la mañana a hora aleatoria).
