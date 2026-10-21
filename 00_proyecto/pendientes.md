@@ -101,3 +101,11 @@ Hipótesis preliminares, a confirmar:
 - [ ] **Ring Intercom** (portero): instalar y configurar en la app Ring; después integración oficial (nube, 2FA). Reglas propuestas: abrir siempre con confirmación, nunca por automatización ni voz; decidir si se integra la apertura (HA no permite restringir entidades por usuario).
 - [ ] **V2C Trydan** (garaje): integración oficial local por IP. **Bloqueado: sin cobertura Wi-Fi en el garaje.** Opciones: punto de acceso/mesh en el garaje o cable (si el cargador lo admite; verificar modelo).
 - [ ] ⚠️ **R-15 · Carga de la regleta de la cocina**: lavadora + freidora de aire + cafetera en una misma regleta. Comprobar la potencia máxima de la regleta (etiqueta) frente a la suma de los tres; no cortar la lavadora en marcha desde HA.
+
+## Rutinas (2026-10-21)
+- [ ] MAC de la TV en `input_text.tv_sala_mac` (Aida) → probar «Encender TV», «Cenar», «Cine».
+- [ ] Probar en real: volumen 20:00, volumen 7:30/9:00, despertar 6:45.
+- [ ] Cuando funcionen en HA: **desactivar las rutinas equivalentes en Google Home** (si no, se ejecutan dos veces).
+- [ ] Voz: decidir sustituto de «Ok Google, vamos a cenar» (D-036).
+- [ ] Festivos: las rutinas de días laborables no distinguen festivos (opción: integración Workday).
+- [ ] Propuesta de seguridad: apagado automático de la cafetera a las X h (pendiente de decisión).
