@@ -127,7 +127,7 @@ Hipótesis preliminares, a confirmar:
 - [ ] **Cámaras en Sistema (tablet)**: vista previa de las 2 cámaras pedida por Aida. Bloqueado: las Nest no están en HA (Nest requiere proyecto Google + verificación, igual que Drive). Opciones a decidir: integrar Nest tras la verificación de Google, o cambiar a cámaras locales.
 
 ## Lista de Aida y Mikel (2026-10-22)
-- [ ] App fuera de casa: configurar URL externa en la app de cada móvil (diagnóstico: túnel OK; intentos de acceso fallidos desde datos móviles).
+- [x] App fuera de casa: URL externa configurada en el iPhone (2026-10-22); entra con datos móviles. Comprobar el POCO.
 - [ ] Presencia: ambos móviles envían ya coordenadas; el iPhone no ha registrado ninguna salida desde ayer → probar hoy.
 - [ ] No molestar en el iPhone: la app de iOS no lo permite → Modo Concentración programado en el iPhone.
 - [ ] Termómetros inteligentes para el mapa de calor (cocina, entrada, pasillo, limpieza, baños): comprar (Zigbee, locales).
