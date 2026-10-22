@@ -50,7 +50,7 @@ Hipótesis preliminares, a confirmar:
 - [ ] Grabar capturas del «antes» (`09_contenido/capturas_pendientes.md`)
 - [x] Primer backup completo + copia fuera de la Pi (descarga al PC) + clave de cifrado custodiada (2026-10-20)
 - [x] Reserva DHCP para la Pi en el router (2026-10-19) · R-02 resuelto
-- [ ] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible) → con el MCP Server (D-007 capa 3), tras el túnel. Hoy el navegador pide aprobación por acción en direcciones privadas y no se puede ampliar
+- [x] Usuario de HA dedicado para Claude (no admin salvo que sea imprescindible) — hecho 2026-10-22 (D-043) → con el MCP Server (D-007 capa 3), tras el túnel. Hoy el navegador pide aprobación por acción en direcciones privadas y no se puede ampliar
 
 ## Aplazado por decisión de Aida (2026-10-20)
 
@@ -136,4 +136,4 @@ Hipótesis preliminares, a confirmar:
 ## Seguridad del acceso remoto
 - [ ] Antes del próximo viaje: **certificado de cliente (mTLS)** en los dos móviles + regla «fuera de España solo con certificado». Verificar antes el soporte en la app de iOS. Mientras tanto, al viajar: desactivar la regla de país.
 - [ ] Quitar permiso de escritura a la deploy key de GitHub.
-- [ ] Usuario `claude` + MCP Server (D-007).
+- [x] Usuario `claude` + MCP Server (D-007). Hecho 2026-10-22 · falta probar una acción (p. ej. tira LED)
