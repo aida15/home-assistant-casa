@@ -2,7 +2,7 @@
 
 | Campo | Valor |
 |---|---|
-| Estado | **En curso** |
+| Estado | **Implementado y probado** (2026-10-22): acceso desde PC y móviles; regla de país activa |
 | Objetivo | HA accesible desde fuera por HTTPS en un subdominio propio, sin abrir puertos |
 | Piezas | App comunitaria **Cloudflared** (repo `https://github.com/homeassistant-apps/repository`, v7.0.18) · túnel gestionado desde el panel de Cloudflare (token) · `http:` con proxy de confianza e `ip_ban` |
 | Datos sensibles | Token del túnel y dominio: **solo en Cloudflare y en la app**, nunca en Git ni en el chat |

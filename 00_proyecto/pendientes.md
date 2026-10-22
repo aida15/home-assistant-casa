@@ -132,3 +132,8 @@ Hipótesis preliminares, a confirmar:
 - [ ] No molestar en el iPhone: la app de iOS no lo permite → Modo Concentración programado en el iPhone.
 - [ ] Termómetros inteligentes para el mapa de calor (cocina, entrada, pasillo, limpieza, baños): comprar (Zigbee, locales).
 - [ ] Nest: credenciales de aplicación creadas por Aida, integración sin terminar. Bloqueo: publicar la app OAuth exige verificación de marca → web en Cloudflare Pages + Search Console (sirve también para Drive).
+
+## Seguridad del acceso remoto
+- [ ] Antes del próximo viaje: **certificado de cliente (mTLS)** en los dos móviles + regla «fuera de España solo con certificado». Verificar antes el soporte en la app de iOS. Mientras tanto, al viajar: desactivar la regla de país.
+- [ ] Quitar permiso de escritura a la deploy key de GitHub.
+- [ ] Usuario `claude` + MCP Server (D-007).
