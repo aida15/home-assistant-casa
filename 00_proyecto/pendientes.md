@@ -136,4 +136,4 @@ Hipótesis preliminares, a confirmar:
 ## Seguridad del acceso remoto
 - [ ] Antes del próximo viaje: **certificado de cliente (mTLS)** en los dos móviles + regla «fuera de España solo con certificado». Verificar antes el soporte en la app de iOS. Mientras tanto, al viajar: desactivar la regla de país.
 - [ ] Quitar permiso de escritura a la deploy key de GitHub.
-- [x] Usuario `claude` + MCP Server (D-007). Hecho 2026-10-22 · falta probar una acción (p. ej. tira LED)
+- [x] Usuario `claude` + MCP Server (D-007). Hecho 2026-10-22 · lectura y acción (mesita Mikel) probadas
