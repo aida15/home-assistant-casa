@@ -137,3 +137,6 @@ Hipótesis preliminares, a confirmar:
 - [ ] Antes del próximo viaje: **certificado de cliente (mTLS)** en los dos móviles + regla «fuera de España solo con certificado». Verificar antes el soporte en la app de iOS. Mientras tanto, al viajar: desactivar la regla de país.
 - [ ] Quitar permiso de escritura a la deploy key de GitHub.
 - [x] Usuario `claude` + MCP Server (D-007). Hecho 2026-10-22 · lectura y acción (mesita Mikel) probadas
+
+## Voz y nube (decisión 2026-10-23)
+- [ ] Voz con los Nest (Nabu Casa / Google Assistant manual / puente Matter) → **en espera** hasta que Google apruebe la verificación de marca; se decide junto con Nest (cámaras) y la copia en Drive.
