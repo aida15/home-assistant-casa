@@ -142,3 +142,4 @@ Hipótesis preliminares, a confirmar:
 - [ ] Voz con los Nest (Nabu Casa / Google Assistant manual / puente Matter) → **en espera** hasta que Google apruebe la verificación de marca; se decide junto con Nest (cámaras) y la copia en Drive.
 - [ ] Modo Noche · cerradura (Nuki): cerrar al pasar a Noche y avisar si queda abierta — cuando se instale.
 - [ ] Tablet: dar permiso «Modificar ajustes del sistema» a la app de HA (brillo nocturno) y revisar la carga (batería al 2 % el 24/10).
+- [ ] **Válvula de agua inteligente** (petición de Aida, 2026-10-24): actuador motorizado Zigbee sobre la llave general + sensores de fuga (cocina, lavadora, baños). Automatización: fuga detectada → cerrar válvula + aviso crítico a los dos móviles; reabrir solo a mano. Revisar antes: tipo y diámetro de la llave general (palanca o mando redondo), acceso y enchufe cercano. Mantener la llave manual operativa.
