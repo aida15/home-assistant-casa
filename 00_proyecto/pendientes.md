@@ -140,3 +140,5 @@ Hipótesis preliminares, a confirmar:
 
 ## Voz y nube (decisión 2026-10-23)
 - [ ] Voz con los Nest (Nabu Casa / Google Assistant manual / puente Matter) → **en espera** hasta que Google apruebe la verificación de marca; se decide junto con Nest (cámaras) y la copia en Drive.
+- [ ] Modo Noche · cerradura (Nuki): cerrar al pasar a Noche y avisar si queda abierta — cuando se instale.
+- [ ] Tablet: dar permiso «Modificar ajustes del sistema» a la app de HA (brillo nocturno) y revisar la carga (batería al 2 % el 24/10).
