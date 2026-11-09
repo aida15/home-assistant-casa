@@ -86,7 +86,7 @@ Hipótesis preliminares, a confirmar:
   - Sensores de agua (lavadora y fregadero) → ambos en `cocina` (`binary_sensor.cocina_fuga_lavadora`, `binary_sensor.cocina_fuga_fregadero`). Aviso de fuga = prioridad crítica (D-008), en Fase 8.
 - 3.er enchufe sin configurar: se añadirá cuando tenga uso.
 - [ ] Tablet: crear usuario `tablet` (Aida), volver a iniciar sesión en la tablet con él y borrar el registro hecho con la cuenta de habitante.
-- [ ] Midea (deshumidificador): no está en Smart Life/Tuya; integración comunitaria → esperar al Marketplace de HA 2026.11 (D-023).
+- [x] (2026-11-09) Midea (deshumidificador) integrado con «Midea AC LAN» desde el Marketplace. Pendiente: reserva DHCP para su IP en el router; decidir modo/objetivo de humedad; añadirlo al panel.
 
 ## Fase 7 (2026-10-20)
 - [x] (2026-10-20, datos de Aida) ~~Confirmar en la app de tado qué válvula (HomeKit `VA…`/`RU…`) está en cada habitación. Hipótesis por temperaturas: RU4020065024 sala (termostato) · VA2873572352 sala (válvula) · VA3376888832 hab. darlings · VA2252618752 estudio · VA1497840640 hab. Aroa. Después: clima del panel con HomeKit (local) en lugar de la nube.~~ Pendiente: configurar el 4.º cabezal en la sala y confirmar que es `cabezal_4` (VA2873572352).
